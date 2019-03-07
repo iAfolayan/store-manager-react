@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Footer Component should matches the snapshot 1`] = `
+<div
+  className=""
+>
+  <span>
+    @ 2018 - Andela Developer Challenge
+  </span>
+</div>
+`;

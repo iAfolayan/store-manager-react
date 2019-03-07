@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<InputForm /> should rendered Login form without crashing 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    className="text-sm-left"
+    htmlFor="text"
+  >
+    text
+  </label>
+  <input
+    className="col col-md-12 form-control"
+    name="text"
+    onChange={null}
+    placeholder="text"
+    text="text"
+    type="text"
+    value="text"
+  />
+</div>
+`;

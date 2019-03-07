@@ -1,0 +1,64 @@
+$white: #fff;
+$overlay: #12121275;
+$white: #fff;
+
+.wrapper-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: {
+    top: 40px;
+    bottom: 40px;
+  }
+
+  height: 100vh;
+}
+
+.wrapper {
+  background: $overlay;
+  color: $white;
+  padding: 40px;
+	margin: 0 auto;
+	border-radius: 0.313rem;
+  padding-bottom: 1.563rem;
+  text-align: center;
+}
+
+.app-name {
+  font: size 2rem;
+  color: $white;
+  padding-bottom: 10px;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 576px) {
+  .wrapper {
+    width: 85%;
+  }
+  .app-name {
+    font-size: 1rem;
+  }
+ }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .wrapper {
+    width: 85%;
+  }
+ }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .wrapper {
+    width: 40%;
+  }
+ }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .wrapper {
+    width: 25%;
+  }
+ }
+ 
