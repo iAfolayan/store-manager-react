@@ -1,0 +1,13 @@
+.ui.large.stackable.navbar.menu {
+  justify-content: flex-end;
+  text-align: right;
+  padding: 0.5rem;
+  padding-right: 5rem;
+  right: 0rem;
+  margin: 0;
+}
+
+.item:before {
+  width: 0.02rem;
+  background: rgba(34, 36, 38, 0.04);
+}
