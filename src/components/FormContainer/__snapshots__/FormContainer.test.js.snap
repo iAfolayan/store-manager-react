@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FormContainer /> should rendered Form container without crashing 1`] = `
+<div
+  className="wrapper-body d-flex"
+>
+  <div
+    className="wrapper"
+  >
+    <img
+      alt="Logo"
+      src="test-file-stub"
+    />
+    <h1
+      className="app-name"
+    >
+      Edit
+    </h1>
+  </div>
+</div>
+`;

@@ -2,6 +2,15 @@
 
 exports[`App should match snapshot 1`] = `
 <div
-  className="home"
-/>
+  className="store-background"
+>
+  <FormContainer
+    title="Store Manager"
+  >
+    <LoginForm />
+  </FormContainer>
+  <Footer
+    footerClassName="footer login"
+  />
+</div>
 `;

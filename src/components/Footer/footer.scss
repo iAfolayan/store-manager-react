@@ -1,6 +1,34 @@
 .footer {
-  .ui.inverted.pointing.secondary.menu {
-    justify-content: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10px 0;
+  margin: 0 auto;
+  display: block;
+
+  &.login {
+    color: #FFF;
+
+    span {
+      text-align: center;
+      width: 30%;
+      display: block;
+      margin: 0 auto;
+      border-top: 1px solid #FFF;
+      padding-top: 1rem;
+    }
   }
-  margin: 0;
+
+  &.inner {
+    color: #000;
+
+    span {
+      text-align: center;
+      width: 30%;
+      display: block;
+      margin: 0 auto;
+      border-top: 1px solid #000;
+      padding-top: 1rem;
+    }
+  }
 }

@@ -1,0 +1,57 @@
+label.text-sm-left {
+  float: left;
+}
+
+
+
+.reset-password {
+  color: #fff;
+  display: inline;
+  line-height: 35px;
+}
+
+.login{
+  margin-left: 2rem
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 576px) {
+  .wrapper {
+    width: 85%;
+  }
+  .app-name {
+    font-size: 1rem;
+  }
+ }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .wrapper {
+    width: 85%;
+  }
+ }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .wrapper {
+    width: 40%;
+  }
+ }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .wrapper {
+    width: 30%;
+  }
+  .reset-password {
+    color: #fff;
+    display: block;
+    margin-left: 0.75rem;
+  }
+  
+  .reset-password>a {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #fff
+  }
+ }
