@@ -4,6 +4,10 @@ import Logo from './images/logo.PNG';
 import './navbar.scss';
 
 class Navigation extends Component {
+  logout() {
+    setToken('');
+  }
+
   render() {
     return (
       <div className="sidebar pt-3">
@@ -46,7 +50,7 @@ class Navigation extends Component {
 								</div>
 							</li>
               <li>
-                <NavLink to="">Logout</NavLink>
+                <NavLink to={`${window.location.pathname}`} onClick={this.logout().bind(this)}>Logout</NavLink>
               </li>
 						</ul>
         </nav>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import LogInValidator from '../../helpers/validate';
 import './LoginForm.scss';
 import { connect } from 'react-redux';
@@ -45,6 +45,8 @@ class LoginForm extends Component {
 
   render() {
     const { user, errors, isLoading } = this.state;
+    const { authIsLoading } = this.props.auth;
+    if (this.props.auth.isAuthenticated) { return <Redirect to="/products" />}
     return (
       <form onSubmit={this.handleSubmit}>
         <InputForm
@@ -68,7 +70,7 @@ class LoginForm extends Component {
           onChange={this.handleChange}
       />
         <div className="d-flex flex-row-reverse">
-          <button onClick={this.handleChange} type="submit" className="btn btn-outline-primary login" disabled={isLoading}>Login</button>
+          <button onClick={this.handleChange} type="submit" className="btn btn-outline-primary login" disabled={authIsLoading ? isLoading: null}>{authIsLoading ? 'Loading...' : 'Login'}</button>
           <span className="d-flex align-items-center reset-password mt10">
 Forget password? &nbsp;
             <Link to="/password"> Click here</Link>
@@ -87,7 +89,7 @@ const mapStateToProps = state => ({
   auth: state.authReducer
 });
 
-export {LoginForm as Login };
+export { LoginForm as Login };
 export default connect(
   mapStateToProps,
   mapDispatchToProps
