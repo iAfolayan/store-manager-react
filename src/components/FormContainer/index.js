@@ -1,7 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import './FormContainer.scss';
-import Logo from './images/logo.png';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
+import Logo from './images/logo.PNG';
 
 
 class FormContainer extends Component {
@@ -13,13 +15,16 @@ class FormContainer extends Component {
   render() {
     const { title, children } = this.props;
     return (
-      <div className="wrapper-body d-flex">
-        <div className="wrapper">
-          <img src={Logo} alt="Logo" />
-          <h1 className="app-name">{ title }</h1>
-          <Fragment>{children}</Fragment>
+      <Fragment>
+        <ToastContainer autoClose={5000} />
+        <div className="wrapper-body d-flex">
+          <div className="wrapper">
+            <img src={Logo} alt="Logo" />
+            <h1 className="app-name">{ title }</h1>
+            <Fragment>{children}</Fragment>
+          </div>
         </div>
-      </div>
+      </Fragment>
     );
   }
 }
