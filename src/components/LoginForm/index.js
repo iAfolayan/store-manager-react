@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import InputForm from '../InputForms';
 import LogInValidator from '../../helpers/validate';
 import './LoginForm.scss';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { userLogin } from '../../actions/authActions/authActions';
+import InputForm from '../InputForms';
 
 class LoginForm extends Component {
   constructor(props) {
@@ -27,6 +30,8 @@ class LoginForm extends Component {
     if (errors) {
       this.setState({ errors });
     }
+    const { login } = this.props;
+    login(user);
   }
 
   handleChange(event) {
@@ -74,4 +79,26 @@ Forget password? &nbsp;
   }
 }
 
-export default LoginForm;
+const mapDispatchToProps = dispatch => ({
+  login: user => dispatch(userLogin(user))
+});
+
+const mapStateToProps = state => ({
+  auth: state.authReducer
+});
+
+export {LoginForm as Login };
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LoginForm);
+
+LoginForm.propTypes = {
+  login: PropTypes.func,
+  auth:PropTypes.object,
+};
+
+LoginForm.defaultProps = {
+  login: null,
+  auth: {}
+}
