@@ -1,39 +1,58 @@
 import React, { Component } from 'react';
-import { Menu } from 'semantic-ui-react';
+import { NavLink } from 'react-router-dom';
+import Logo from './images/logo.PNG';
 import './navbar.scss';
 
-export default class MenuExampleSizeMini extends Component {
-  state = { activeItem: 'home' };
-
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
-
+class Navigation extends Component {
   render() {
-    const { activeItem } = this.state;
-
     return (
-      <Menu className="navbar" stackable size="large">
-        <Menu.Item />
-
-        <Menu.Item
-          name="features"
-          active={activeItem === 'features'}
-          onClick={this.handleItemClick}
-        >
-          Features
-        </Menu.Item>
-
-        <Menu.Item
-          name="testimonials"
-          active={activeItem === 'testimonials'}
-          onClick={this.handleItemClick}
-        >
-          Testimonials
-        </Menu.Item>
-
-        <Menu.Item name="sign-in" active={activeItem === 'sign-in'} onClick={this.handleItemClick}>
-          Sign-in
-        </Menu.Item>
-      </Menu>
+      <div className="sidebar pt-3">
+        <img src={Logo} />
+      <h5 className="d-flex justify-content-center welcomeMessage">Welcome. iAfolayan</h5>
+      <br />
+        <nav className="navbar">
+          <ul>
+						<li>
+              <NavLink to="/products">Home</NavLink>
+            </li>
+						<li id="usrManagement">User Management
+							<div className="usrChild">
+								<ul>
+									<li>
+                    <NavLink className="p-2" to="user">Create new User</NavLink>
+                  </li>
+                  <li>
+                    <NavLink className="p-2" to="viewSales">View Sales Record</NavLink>
+                  </li>  
+                  <li>
+                    <NavLink className="p-2" to="viewUser">View users</NavLink>
+                  </li>
+								</ul>
+							</div>
+						</li>
+            <li id="prdManagement">Product Management
+								<div className="prdChild">
+									<ul>
+                    <li>
+                      <NavLink className="p-2" to="category">Create Category</NavLink>
+                    </li>
+                    <li>
+                      <NavLink className="p-2" to="product">Create Product</NavLink>
+                    </li>
+                    <li>
+                      <NavLink className="p-2" to="modify">Modify product</NavLink>
+                    </li>
+									</ul>
+								</div>
+							</li>
+              <li>
+                <NavLink to="">Logout</NavLink>
+              </li>
+						</ul>
+        </nav>
+        </div>
     );
   }
 }
+
+export default Navigation;
