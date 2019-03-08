@@ -1,38 +1,9 @@
 import { toast } from 'react-toastify';
-import { signupCall, loginCall } from '../../helpers/axiosCalls/auth';
+import { loginCall } from '../../helpers/axiosHelper/auth';
 import { setToken } from '../../helpers/jwt';
 import actionTypes from './actionTypes';
-import triggerLoading from './loading';
-import networkError from '../networkError/networkErrorAction';
-import { networkErrorResponse } from '../../constants';
 
-const { AUTH_LOADING, SIGNUP_SUCCESS, SIGNUP_FAILURE, LOGIN_SUCCESS, LOGIN_FAILURE } = actionTypes;
-
-export const signUpSuccess = payload => ({
-  type: SIGNUP_SUCCESS,
-  payload
-});
-
-export const signUpFailure = payload => ({
-  type: SIGNUP_FAILURE,
-  payload
-});
-
-export const userSignUp = user => async (dispatch) => {
-  try {
-    dispatch(triggerLoading(AUTH_LOADING));
-    const response = await signupCall(user);
-    dispatch(signUpSuccess(response));
-  } catch (error) {
-    if (error.response) {
-      dispatch(signUpFailure(error.response));
-      toast.error(error.response.data.message);
-    } else {
-      dispatch(networkError(networkErrorResponse));
-      toast.warn(networkErrorResponse);
-    }
-  }
-};
+const { AUTH_LOADING, LOGIN_SUCCESS, LOGIN_FAILURE } = actionTypes;
 
 export const loginSuccess = payload => ({
   type: LOGIN_SUCCESS,
@@ -55,9 +26,6 @@ export const userLogin = user => async (dispatch) => {
     if (error.response) {
       dispatch(loginFailure(error.response));
       toast.error(error.response.data.message);
-    } else {
-      dispatch(networkError(networkErrorResponse));
-      toast.warn(networkErrorResponse);
     }
   }
 };
