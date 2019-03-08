@@ -1,0 +1,92 @@
+.productHolderCard{
+	max-height: 360px;
+	max-width: 222px;
+	border-radius: 5px;
+	padding-bottom: 15px;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+	margin: auto;
+}
+.card {
+  margin: 20px 0px;
+}
+
+.product-title{
+	padding-top: 15px;
+	text-align:center;
+}
+
+.img-holder{
+	max-height: 250px;
+	max-width: 200px;
+	margin: 0 auto;
+	margin-top: 7px;
+	height:250px;
+	position: relative;
+	text-align: center;
+}
+
+.img-holder img{
+	max-height: 201px;
+	max-width: 200px;
+	margin: 0 auto;
+	margin-top: 7px;
+	min-height: 25px;
+	min-width: auto;
+}
+
+.img-overlay{
+	max-height: 91.2px;
+	max-width: 200px;
+	position: absolute;
+	right:0;
+	left: 0;
+	bottom: -7px;
+	overflow: hidden;
+	height: 0%; 
+	transition: height 0.5s;
+	background: var(--primaryColor);;
+	color: white;
+	display: flex;
+	align-items:center;
+	justify-content:center;
+}
+
+.card:hover .img-overlay{
+	height: 100%;
+}
+.card:hover{
+	box-shadow: 0 2px 21px 0 rgba(0,0,0,0.19);
+}
+
+.card .dets{
+	max-height: 70px;
+	max-width:200px;
+	margin:15px auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 25px;
+	text-align: center;
+}
+
+.card a {
+	text-decoration: none;
+	color: #000;
+}
+
+.product-holder-prot .dets {
+	margin: auto;
+	text-align: center;	
+}
+article {
+	text-align: center;
+    font-size: 14px;
+    line-height: 25px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.img-holder h3 {
+	text-align: center;
+	font-size: 13px;
+}

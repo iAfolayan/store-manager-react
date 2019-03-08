@@ -69,7 +69,7 @@
     "husky": "^1.3.1",
     "image-webpack-loader": "^4.6.0",
     "imports-loader": "^0.8.0",
-    "jest": "^24.0.0",
+    "jest": "^24.3.1",
     "jest-html-reporter": "^2.4.4",
     "jest-localstorage-mock": "^2.4.0",
     "mini-css-extract-plugin": "^0.5.0",
@@ -86,7 +86,8 @@
     "test": "NODE_ENV=test jest --coverage",
     "start": "webpack-dev-server --mode development --open",
     "dev": "webpack-dev-server --config webpack/webpack.dev.js --open --hot",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "heroku-postbuild": "npm run build"
   },
   "jest": {
     "setupFilesAfterEnv": [

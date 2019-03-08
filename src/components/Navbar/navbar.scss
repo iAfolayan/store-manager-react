@@ -1,13 +1,87 @@
-.ui.large.stackable.navbar.menu {
-  justify-content: flex-end;
-  text-align: right;
-  padding: 0.5rem;
-  padding-right: 5rem;
-  right: 0rem;
-  margin: 0;
+.sidebar {
+	background: #0f488a;
+	height: 100vh;
+	position: fixed;
+
+	>img {
+		text-align: center;
+	}
 }
 
-.item:before {
-  width: 0.02rem;
-  background: rgba(34, 36, 38, 0.04);
+nav {
+	>ul {
+		line-height: 60px;
+		padding-inline-start: 0px;
+		>li {
+			list-style: none;
+			padding-inline-start: 2px;
+			>a {
+				color: #FFF;
+			}
+		}
+	}
+}
+
+li#usrManagement, li#prdManagement {
+	color: #fff;
+	font-size: 1rem;
+}
+.usrChild {
+	>ul {
+		padding-inline-start: 0px;
+		>li {
+			line-height: 30px;
+			margin: 0;
+			display: block;
+			font-size: 12px;
+			>a {
+				padding-inline-start: 5px !important;
+				color: #FFF;
+				&:hover {
+					color: #FFF;
+				}
+			}
+		}
+	}
+}
+.prdChild {
+	>ul {
+		padding-inline-start: 0px;
+		>li {
+			line-height: 30px;
+			margin: 0;
+			display: block;
+			font-size: 12px;
+			>a {
+				padding-inline-start: 5px !important;
+				color: #FFF;
+				&:hover {
+					color: #FFF;
+				}
+			}
+		}
+	}
+}
+.rptChild {
+	>ul {
+		padding-inline-start: 0px;
+		>li {
+			line-height: 30px;
+			margin: 0;
+			display: block;
+			font-size: 12px;
+			>a {
+				padding-inline-start: 5px !important;
+				color: #FFF;
+				&:hover {
+					color: #FFF;
+				}
+			}
+		}
+	}
+}
+
+.welcomeMessage {
+	color:#fff;
+	font-size: 1rem
 }

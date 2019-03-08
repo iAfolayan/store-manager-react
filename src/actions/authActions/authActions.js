@@ -17,11 +17,12 @@ export const loginFailure = payload => ({
 
 export const userLogin = user => async (dispatch) => {
   try {
-    dispatch(triggerLoading(AUTH_LOADING));
+    // dispatch(triggerLoading(AUTH_LOADING));
     const response = await loginCall(user);
     setToken(response.data.loginToken);
-    dispatch(loginSuccess(response));
+    dispatch(loginSuccess(response.data));
     toast.success(response.data.message);
+    console.log('-------->', user)
   } catch (error) {
     if (error.response) {
       dispatch(loginFailure(error.response));
