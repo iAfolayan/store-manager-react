@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Product page /> should rendered product page without crashed 1`] = `
+<Fragment>
+  <div
+    className="form-group row"
+  >
+    <div
+      className="col-sm-12 col-md-2"
+    >
+      <Navigation />
+    </div>
+    <div
+      className="col-sm-12 col-md-10"
+    >
+      <Product />
+      <Footer
+        footerClassName="footer inner"
+      />
+    </div>
+  </div>
+</Fragment>
+`;

@@ -1,6 +1,7 @@
 import Home from '../pages/Home';
 import NotFound from '../pages/NotFound';
 import Dashboard from '../pages/Dashboard';
+import Product from '../pages/Product';
 
 export default [
   {
@@ -14,6 +15,12 @@ export default [
     component: Dashboard,
     exact: true,
     path: '/products'
+  },
+  {
+    name: 'product',
+    component: Product,
+    exact: true,
+    path: '/product'
   },
   {
     name: '404',
