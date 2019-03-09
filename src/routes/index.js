@@ -5,6 +5,7 @@ import Product from '../pages/Product';
 import Category from '../pages/Category';
 import Modify from '../pages/Modify';
 import User from '../pages/User';
+import Users from '../pages/Users';
 
 export default [
   {
@@ -42,6 +43,12 @@ export default [
     component: User,
     exact: true,
     path: '/user'
+  },
+  {
+    name: 'users',
+    component: Users,
+    exact: true,
+    path: '/users'
   },
   {
     name: '404',
