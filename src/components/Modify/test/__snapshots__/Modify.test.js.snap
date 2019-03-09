@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Modify product /> should rendered Modify Component without crashed 1`] = `
+<Fragment>
+  <h5
+    className="ml-3 text-primary"
+  >
+    Modify Product
+  </h5>
+  <hr
+    className="mr-5"
+  />
+  <div
+    className="col-md-6 formWrapper"
+  >
+    <form
+      onSubmit={[Function]}
+    >
+      <InputForm
+        error=""
+        id="productName"
+        label="productName"
+        name="productName"
+        onChange={[Function]}
+        placeholder="Name"
+        text="Name"
+        type="text"
+        value="blueetooth"
+      />
+      <small
+        className="form-text text-muted"
+      >
+        Product name is required.
+      </small>
+      <div
+        className="form-group"
+      >
+        <label
+          className="text-sm-left"
+          htmlFor="category"
+        >
+          Category
+        </label>
+        <select
+          className="form-control"
+          name="category"
+          onChange={[Function]}
+        >
+          <option
+            disabled={true}
+            value=""
+          >
+            Select a category
+          </option>
+          <option
+            value="Mobile"
+          >
+            Mobile
+          </option>
+        </select>
+      </div>
+      <div
+        className="form-group"
+      >
+        <label
+          className="text-sm-left"
+          htmlFor="description"
+        >
+          Description
+        </label>
+        <textarea
+          className="form-control"
+          id="description"
+          name="description"
+          onChange={[Function]}
+          placeholder="Description"
+        >
+          New technology 
+        </textarea>
+        <small
+          className="form-text text-muted"
+          id="descHelp"
+        >
+          Give a descriptive information about product
+        </small>
+        <span
+          className="text-danger"
+        />
+      </div>
+      <InputForm
+        error=""
+        id="price"
+        label="price"
+        name="price"
+        onChange={[Function]}
+        placeholder="Enter price"
+        text="Price"
+        type="text"
+        value=""
+      />
+      <InputForm
+        error=""
+        id="minimumAllowed"
+        label="minimumAllowed"
+        name="minimumAllowed"
+        onChange={[Function]}
+        placeholder="Enter minimum sales allowed"
+        text="Minimun Sales Allowed"
+        type="text"
+        value=""
+      />
+      <div
+        className="form-group"
+      >
+        <label
+          htmlFor="image text-sm-left"
+        >
+          Image
+        </label>
+        <input
+          className="form-control-file"
+          id="image"
+          type="file"
+        />
+        <small
+          className="form-text text-muted"
+          id="productHelp"
+        >
+          Change product Image
+        </small>
+        <span
+          className="text-danger"
+        />
+      </div>
+      <button
+        className="btn btn-outline-primary float-right"
+      >
+        Loading...
+      </button>
+    </form>
+  </div>
+</Fragment>
+`;
