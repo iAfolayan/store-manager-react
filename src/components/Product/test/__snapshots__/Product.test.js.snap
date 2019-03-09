@@ -29,7 +29,6 @@ exports[`<Product Component /> should rendered Product component without crashed
       />
       <small
         className="form-text text-muted"
-        id="nameHelp"
       >
         Product name is required.
       </small>
@@ -83,6 +82,9 @@ exports[`<Product Component /> should rendered Product component without crashed
         >
           Give a descriptive information about product
         </small>
+        <span
+          className="text-danger"
+        />
       </div>
       <InputForm
         error=""
@@ -92,7 +94,7 @@ exports[`<Product Component /> should rendered Product component without crashed
         onChange={[Function]}
         placeholder="Enter price"
         text="Price"
-        type="number"
+        type="text"
         value=""
       />
       <InputForm
@@ -103,7 +105,7 @@ exports[`<Product Component /> should rendered Product component without crashed
         onChange={[Function]}
         placeholder="Enter minimum sales allowed"
         text="Minimun Sales Allowed"
-        type="number"
+        type="text"
         value=""
       />
       <div
@@ -125,6 +127,9 @@ exports[`<Product Component /> should rendered Product component without crashed
         >
           Upload product image
         </small>
+        <span
+          className="text-danger"
+        />
       </div>
       <button
         className="btn btn-outline-primary float-right"

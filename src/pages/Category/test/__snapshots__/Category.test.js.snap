@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Category page should rendered category page without crashed 1`] = `
+<Fragment>
+  <div
+    className="form-group row"
+  >
+    <div
+      className="col-md-2"
+    >
+      <Navigation />
+    </div>
+    <div
+      className="col-md-10"
+    >
+      <Category />
+      <Footer
+        footerClassName="footer inner"
+      />
+    </div>
+  </div>
+</Fragment>
+`;
