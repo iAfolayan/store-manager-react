@@ -24,10 +24,10 @@ class Navigation extends Component {
                     <NavLink className="p-2" to="user">Create new User</NavLink>
                   </li>
                   <li>
-                    <NavLink className="p-2" to="viewSales">View Sales Record</NavLink>
+                    <NavLink className="p-2" to="sales">View Sales Record</NavLink>
                   </li>  
                   <li>
-                    <NavLink className="p-2" to="viewUser">View users</NavLink>
+                    <NavLink className="p-2" to="users">View users</NavLink>
                   </li>
 								</ul>
 							</div>
@@ -59,6 +59,7 @@ class Navigation extends Component {
       <div className="sidebar pt-3">
         <img src={Logo} />
       <h5 className="d-flex justify-content-center welcomeMessage">Welcome. iAfolayan</h5>
+      <hr />
       <br />
         <nav className="navbar">
           {this.renderMenu()} 
