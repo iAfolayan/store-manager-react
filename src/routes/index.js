@@ -2,6 +2,7 @@ import Home from '../pages/Home';
 import NotFound from '../pages/NotFound';
 import Dashboard from '../pages/Dashboard';
 import Product from '../pages/Product';
+import Category from '../pages/Category';
 
 export default [
   {
@@ -21,6 +22,12 @@ export default [
     component: Product,
     exact: true,
     path: '/product'
+  },
+  {
+    name: 'category',
+    component: Category,
+    exact: true,
+    path: '/category'
   },
   {
     name: '404',
