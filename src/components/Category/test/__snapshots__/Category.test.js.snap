@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Category component should rendered category component 1`] = `
+<Fragment>
+  <h5
+    className="ml-3 text-primary"
+  >
+    Create Category
+  </h5>
+  <hr
+    className="mr-5"
+  />
+  <div
+    className="col-md-6 formWrapper"
+  >
+    <form
+      onSubmit={[Function]}
+    >
+      <InputForm
+        error=""
+        id="categoryName"
+        label="categoryName"
+        name="categoryName"
+        onChange={[Function]}
+        placeholder="Enter category name"
+        text="Name"
+        value=""
+      />
+      <button
+        className="btn btn-outline-primary float-right"
+      >
+        Add Category
+      </button>
+    </form>
+  </div>
+</Fragment>
+`;

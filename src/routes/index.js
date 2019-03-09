@@ -3,6 +3,7 @@ import NotFound from '../pages/NotFound';
 import Dashboard from '../pages/Dashboard';
 import Product from '../pages/Product';
 import Category from '../pages/Category';
+import Modify from '../pages/Modify';
 
 export default [
   {
@@ -28,6 +29,12 @@ export default [
     component: Category,
     exact: true,
     path: '/category'
+  },
+  {
+    name: 'modify',
+    component: Modify,
+    exact: true,
+    path: '/modify'
   },
   {
     name: '404',

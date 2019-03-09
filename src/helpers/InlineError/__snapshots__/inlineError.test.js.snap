@@ -2,6 +2,6 @@
 
 exports[`Test inlineError Component should matches the snapshot 1`] = `
 <span
-  className="inlineError"
+  className="inlineError text-danger"
 />
 `;
