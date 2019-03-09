@@ -4,6 +4,7 @@ import Dashboard from '../pages/Dashboard';
 import Product from '../pages/Product';
 import Category from '../pages/Category';
 import Modify from '../pages/Modify';
+import User from '../pages/User';
 
 export default [
   {
@@ -35,6 +36,12 @@ export default [
     component: Modify,
     exact: true,
     path: '/modify'
+  },
+  {
+    name: 'user',
+    component: User,
+    exact: true,
+    path: '/user'
   },
   {
     name: '404',

@@ -61,3 +61,29 @@ export const ValidateCategory = (name) => {
 
   return errors;
 }
+
+export const CreateUserValidator = (user) => {
+  const errors = {};
+
+  if(Validator.isEmpty(user.title)) {
+    errors.title = 'This field is required'
+  } else if(!Validator.isAlpha(user.title)) {
+    errors.title = 'Oops!!! can ONLY be alphabet';
+  }
+  if (Validator.isEmpty(user.staffId)) {
+    errors.staffId = 'This field is required';
+  } else if (!Validator.contains(user.staffId, 'SM')) {
+    errors.staffId = 'Oops!!! Invalid StaffId must contain "SM"';
+  }
+  if (Validator.isEmpty(user.phoneNumber)) {
+    errors.phoneNumber = 'This field is required';
+  } else if (!Validator.isMobilePhone(user.phoneNumber)) {
+    errors.phoneNumber = 'Oops!!! Invalid input';
+  }
+  if(Validator.isEmpty(user.fullname)) {
+    errors.fullname = 'This field is required'
+  } else if(!Validator.isAlpha(user.fullname)) {
+    errors.fullname = 'Oops!!! can ONLY be alphabet';
+  }
+  return errors;
+}
