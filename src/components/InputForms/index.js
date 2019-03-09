@@ -11,7 +11,7 @@ const InputForm = ({ label, text, type, name, value, onChange, placeholder, erro
     <input
 className="col col-md-12 form-control" text={text} name={name} value={value} placeholder={placeholder} type={type} onChange={onChange}
 />
-    {error && <InlineError text={error} />}
+    {error && <InlineError className="text-danger" text={error} />}
   </div>
 );
 

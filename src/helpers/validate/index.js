@@ -1,6 +1,6 @@
 import Validator from 'validator';
 
-const LogInValidator = (user) => {
+export const LogInValidator = (user) => {
   const errors = {};
 
   if (Validator.isEmpty(user.staffId)) {
@@ -16,13 +16,36 @@ const LogInValidator = (user) => {
   // }
   return errors;
 };
-export default LogInValidator;
 
-// export const CreateUserValidation = (user) => {
-//   const errors = {};
-//   if (Validator.isEmpty(user.staffId)) {
-//     errors.staffId = 'Staff Id field is required';
-//   } else if (!Validator.contains(user.staffId, 'SM')) {
-//     errors.staffId = 'Invalid staffId format';
-//   }
-// };
+export const CreateProductValidator = (product) => {
+  const errors = {};
+
+  if(Validator.isEmail(product.name)) {
+    errors.name = 'This field is required';
+  } else if (!Validator.isAlpha(product.name)) {
+    errors.name = 'Oops!!! can ONLY be alphabet';
+  }
+  if(Validator.isEmpty(product.price)) {
+    errors.price = 'This field is required';
+  } else if (!Validator.isFloat(product.price)) {
+    errors.price = 'Oops!!! enter a valid amount';
+  }
+  if(Validator.isEmpty(product.description)) {
+    errors.description = 'This field is required';
+  } else if(!Validator.isLength(product.description, { max: 255 })) {
+    errors.description = 'Oops!!! exceed description length';
+  } else {
+    errors.description = '';
+  }
+  if(Validator.isEmpty(product.minimumAllowed)) {
+    errors.minimumAllowed = 'This field is required';
+  } else if (!Validator.isInt(product.minimumAllowed)) {
+    errors.minimumAllowed = 'Oops!!! enter a valid number';
+  }
+  if(Validator.isEmpty(product.image)) {
+    errors.image = 'This field is required';
+  } else {
+    errors.image = '';
+  }
+  return errors;
+}
