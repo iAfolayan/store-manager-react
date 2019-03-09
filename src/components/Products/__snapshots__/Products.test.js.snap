@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Products /> should render product display without crashed 1`] = `
+<Fragment>
+  <h5
+    className="justify-content-start text-primary ml-3"
+  >
+    Available Products
+  </h5>
+  <ProductList
+    filter={
+      Array [
+        Object {
+          "description": "A new brand product",
+          "id": 1,
+          "image": "image.png",
+          "minimumallowed": 40,
+          "name": "Bluetooth",
+          "price": 302.6,
+        },
+        Object {
+          "description": "A new brand product",
+          "id": 2,
+          "image": "image.png",
+          "minimumallowed": 50,
+          "name": "Bluetooth",
+          "price": 302,
+        },
+        Object {
+          "description": "Andela is a joint company founded in Nigeria and the U.S with a different location in Lagos, Kampala, Nairobi, Cairo, and Kigali",
+          "id": 3,
+          "image": "default.png",
+          "minimumallowed": 20,
+          "name": "Samsung Mobile",
+          "price": 50000,
+        },
+        Object {
+          "description": "Andela is a joint company founded in Nigeria and the U.S with a different location in Lagos, Kampala, Nairobi, Cairo, and Kigali",
+          "id": 4,
+          "image": "default.png",
+          "minimumallowed": 20,
+          "name": "Tecno Mobile",
+          "price": 50000,
+        },
+        Object {
+          "description": "Andela is aimed in recruiting only the top 1% of software talent in Africa with a 10 years mission of training 100, 000 developers in Africa. This is one of the company primary strengths, and this attracted investments from great people like Zuckerberg.",
+          "id": 5,
+          "image": "default.png",
+          "minimumallowed": 20,
+          "name": "Nokia Mobile",
+          "price": 50000,
+        },
+        Object {
+          "description": "Andela is a joint company founded in Nigeria and the U.S with a different location in Lagos, Kampala, Nairobi, Cairo, and Kigali",
+          "id": 6,
+          "image": "default.png",
+          "minimumallowed": 20,
+          "name": "Hawei Mobile",
+          "price": 50000,
+        },
+      ]
+    }
+    products={
+      Array [
+        Object {
+          "description": "A new brand product",
+          "id": 1,
+          "image": "image.png",
+          "minimumallowed": 40,
+          "name": "Bluetooth",
+          "price": 302.6,
+        },
+        Object {
+          "description": "A new brand product",
+          "id": 2,
+          "image": "image.png",
+          "minimumallowed": 50,
+          "name": "Bluetooth",
+          "price": 302,
+        },
+        Object {
+          "description": "Andela is a joint company founded in Nigeria and the U.S with a different location in Lagos, Kampala, Nairobi, Cairo, and Kigali",
+          "id": 3,
+          "image": "default.png",
+          "minimumallowed": 20,
+          "name": "Samsung Mobile",
+          "price": 50000,
+        },
+        Object {
+          "description": "Andela is a joint company founded in Nigeria and the U.S with a different location in Lagos, Kampala, Nairobi, Cairo, and Kigali",
+          "id": 4,
+          "image": "default.png",
+          "minimumallowed": 20,
+          "name": "Tecno Mobile",
+          "price": 50000,
+        },
+        Object {
+          "description": "Andela is aimed in recruiting only the top 1% of software talent in Africa with a 10 years mission of training 100, 000 developers in Africa. This is one of the company primary strengths, and this attracted investments from great people like Zuckerberg.",
+          "id": 5,
+          "image": "default.png",
+          "minimumallowed": 20,
+          "name": "Nokia Mobile",
+          "price": 50000,
+        },
+        Object {
+          "description": "Andela is a joint company founded in Nigeria and the U.S with a different location in Lagos, Kampala, Nairobi, Cairo, and Kigali",
+          "id": 6,
+          "image": "default.png",
+          "minimumallowed": 20,
+          "name": "Hawei Mobile",
+          "price": 50000,
+        },
+      ]
+    }
+  />
+</Fragment>
+`;

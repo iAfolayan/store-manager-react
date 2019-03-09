@@ -2,10 +2,13 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import Logo from './images/logo.PNG';
 import './navbar.scss';
+import { setToken } from '../../helpers/jwt';
+
 
 class Navigation extends Component {
-  logout() {
+  logout = () => {
     setToken('');
+    window.location.replace("http://localhost:5050/")
   }
 
   render() {
@@ -50,7 +53,7 @@ class Navigation extends Component {
 								</div>
 							</li>
               <li>
-                <NavLink to={`${window.location.pathname}`} onClick={this.logout().bind(this)}>Logout</NavLink>
+                <NavLink to="" onClick={this.logout}>Logout</NavLink>
               </li>
 						</ul>
         </nav>

@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NavBar /> should rendered NavBar without crashed 1`] = `
+<div
+  className="sidebar pt-3"
+>
+  <img
+    src="test-file-stub"
+  />
+  <h5
+    className="d-flex justify-content-center welcomeMessage"
+  >
+    Welcome. iAfolayan
+  </h5>
+  <br />
+  <nav
+    className="navbar"
+  >
+    <ul>
+      <li>
+        <NavLink
+          activeClassName="active"
+          aria-current="page"
+          to="/products"
+        >
+          Home
+        </NavLink>
+      </li>
+      <li
+        id="usrManagement"
+      >
+        User Management
+        <div
+          className="usrChild"
+        >
+          <ul>
+            <li>
+              <NavLink
+                activeClassName="active"
+                aria-current="page"
+                className="p-2"
+                to="user"
+              >
+                Create new User
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                activeClassName="active"
+                aria-current="page"
+                className="p-2"
+                to="viewSales"
+              >
+                View Sales Record
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                activeClassName="active"
+                aria-current="page"
+                className="p-2"
+                to="viewUser"
+              >
+                View users
+              </NavLink>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li
+        id="prdManagement"
+      >
+        Product Management
+        <div
+          className="prdChild"
+        >
+          <ul>
+            <li>
+              <NavLink
+                activeClassName="active"
+                aria-current="page"
+                className="p-2"
+                to="category"
+              >
+                Create Category
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                activeClassName="active"
+                aria-current="page"
+                className="p-2"
+                to="product"
+              >
+                Create Product
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                activeClassName="active"
+                aria-current="page"
+                className="p-2"
+                to="modify"
+              >
+                Modify product
+              </NavLink>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <NavLink
+          activeClassName="active"
+          aria-current="page"
+          onClick={[Function]}
+          to=""
+        >
+          Logout
+        </NavLink>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;

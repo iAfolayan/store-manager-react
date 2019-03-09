@@ -1,5 +1,13 @@
 import React, { Component, Fragment } from 'react';
 import ProductList from '../ProductList';
+// import Pagination from 'react-js-pagination';
+// require('bootstrap/less/bootstrap.less');
+import prodImage from '../../images/1.PNG';
+import prodImage2 from '../../images/2.PNG';
+import prodImage3 from '../../images/3.PNG';
+import prodImage4 from '../../images/4.PNG';
+import prodImage5 from '../../images/5.PNG';
+
 import './Products.scss';
 
 class Products extends Component {
@@ -12,7 +20,7 @@ class Products extends Component {
 					name: 'Bluetooth',
 					description: 'A new brand product',
 					price: 302.6,
-					image: 'image.png',
+					image: prodImage,
 					minimumallowed: 40
 				},
 				{
@@ -20,7 +28,7 @@ class Products extends Component {
 					name: 'Bluetooth',
 					description: 'A new brand product',
 					price: 302.0,
-					image: 'image.png',
+					image: prodImage4,
 					minimumallowed: 50
 				},
 				{
@@ -29,7 +37,7 @@ class Products extends Component {
 					description:
 						'Andela is a joint company founded in Nigeria and the U.S with a different location in Lagos, Kampala, Nairobi, Cairo, and Kigali',
 					price: 50000,
-					image: 'default.png',
+					image: prodImage2,
 					minimumallowed: 20
 				},
 				{
@@ -38,7 +46,7 @@ class Products extends Component {
 					description:
 						'Andela is a joint company founded in Nigeria and the U.S with a different location in Lagos, Kampala, Nairobi, Cairo, and Kigali',
 					price: 50000,
-					image: 'default.png',
+					image: prodImage3,
 					minimumallowed: 20
 				},
 				{
@@ -47,7 +55,7 @@ class Products extends Component {
 					description:
 						'Andela is aimed in recruiting only the top 1% of software talent in Africa with a 10 years mission of training 100, 000 developers in Africa. This is one of the company primary strengths, and this attracted investments from great people like Zuckerberg.',
 					price: 50000,
-					image: 'default.png',
+					image: prodImage4,
 					minimumallowed: 20
 				},
 				{
@@ -56,11 +64,75 @@ class Products extends Component {
 					description:
 						'Andela is a joint company founded in Nigeria and the U.S with a different location in Lagos, Kampala, Nairobi, Cairo, and Kigali',
 					price: 50000,
-					image: 'default.png',
+					image: prodImage,
+					minimumallowed: 20
+				},
+				{
+					id: 7,
+					name: 'Hawei Mobile',
+					description:
+						'Andela is a joint company founded in Nigeria and the U.S with a different location in Lagos, Kampala, Nairobi, Cairo, and Kigali',
+					price: 50000,
+					image: prodImage,
+					minimumallowed: 20
+				},
+				{
+					id: 8,
+					name: 'Hawei Mobile',
+					description:
+						'Andela is a joint company founded in Nigeria and the U.S with a different location in Lagos, Kampala, Nairobi, Cairo, and Kigali',
+					price: 50000,
+					image: prodImage5,
+					minimumallowed: 20
+				},
+				{
+					id: 9,
+					name: 'Hawei Mobile',
+					description:
+						'Andela is a joint company founded in Nigeria and the U.S with a different location in Lagos, Kampala, Nairobi, Cairo, and Kigali',
+					price: 50000,
+					image: prodImage3,
+					minimumallowed: 20
+				},
+				{
+					id: 10,
+					name: 'Hawei Mobile',
+					description:
+						'Andela is a joint company founded in Nigeria and the U.S with a different location in Lagos, Kampala, Nairobi, Cairo, and Kigali',
+					price: 50000,
+					image: prodImage,
+					minimumallowed: 20
+				},
+				{
+					id: 11,
+					name: 'Hawei Mobile',
+					description:
+						'Andela is a joint company founded in Nigeria and the U.S with a different location in Lagos, Kampala, Nairobi, Cairo, and Kigali',
+					price: 50000,
+					image: prodImage3,
+					minimumallowed: 20
+				},
+				{
+					id: 12,
+					name: 'Hawei Mobile',
+					description:
+						'Andela is a joint company founded in Nigeria and the U.S with a different location in Lagos, Kampala, Nairobi, Cairo, and Kigali',
+					price: 50000,
+					image: prodImage3,
+					minimumallowed: 20
+				},
+				{
+					id: 13,
+					name: 'Hawei Mobile',
+					description:
+						'Andela is a joint company founded in Nigeria and the U.S with a different location in Lagos, Kampala, Nairobi, Cairo, and Kigali',
+					price: 50000,
+					image: prodImage,
 					minimumallowed: 20
 				}
 			],
-			filterproduct: ''
+			filterproduct: '',
+			activePage: 1
 		};
 	}
 
@@ -68,9 +140,13 @@ class Products extends Component {
 		this.setState({ filterproduct: event.target.value });
 	};
 
+	handlePageChange(pageNumber) {
+    console.log(`active page is ${pageNumber}`);
+    this.setState({activePage: pageNumber});
+  }
+
 	render() {
 		const { products, filterproduct } = this.state;
-		console.log('\-----------\n', products)
 		const filterProducts = products.filter((product) => {
 			return product.name.toLowerCase().includes(filterproduct.toLowerCase());
 		});
@@ -82,6 +158,13 @@ class Products extends Component {
 				<Fragment>
 					<h5 className="justify-content-start text-primary ml-3">Available Products</h5>
 					<ProductList products={products} filter={filterProducts} />
+					{/* <Pagination
+          activePage={this.state.activePage}
+          itemsCountPerPage={4}
+          totalItemsCount={45}
+          pageRangeDisplayed={4}
+          onChange={this.handlePageChange}
+        /> */}
 				</Fragment>
 			);
 		}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import prodImage from '../../images/1.PNG';
+import { Card, CardImg } from 'reactstrap';
 import './ProductList.scss';
 
 const ProductList = ({ products }) => {
@@ -8,13 +8,13 @@ const ProductList = ({ products }) => {
 		products.map((product) => {
 			return (
 				<div className="col-md-3 float-left" key={product.id}>
-					<div className="card">
+					<Card className="card">
 						<h5 className="card-header text-center">
 							<strong>{product.name}</strong>
 						</h5>
 						<Link to="">
 							<div className="img-holder">
-								<img className="cart-image" src={prodImage} alt="" />
+								<CardImg className="cart-image" src={product.image} alt="" />
 								<div className="img-overlay">
 									<article>{product.description.substring(0, 40)}</article>
 								</div>
@@ -25,7 +25,7 @@ const ProductList = ({ products }) => {
 							{' '}
 							<small>Minimum Qty {product.minimumallowed}</small>
 						</div>
-					</div>
+					</Card>
 				</div>
 			);
 		})

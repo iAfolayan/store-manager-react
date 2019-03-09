@@ -1,21 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<FormContainer /> should rendered Form container without crashing 1`] = `
-<div
-  className="wrapper-body d-flex"
->
+<Fragment>
+  <ToastContainer
+    autoClose={5000}
+    bodyClassName={null}
+    className={null}
+    closeButton={
+      <CloseButton
+        ariaLabel="close"
+      />
+    }
+    closeOnClick={true}
+    draggable={true}
+    draggablePercent={80}
+    hideProgressBar={false}
+    newestOnTop={false}
+    pauseOnFocusLoss={true}
+    pauseOnHover={true}
+    position="top-right"
+    progressClassName={null}
+    progressStyle={null}
+    rtl={false}
+    style={null}
+    toastClassName={null}
+    transition={[Function]}
+  />
   <div
-    className="wrapper"
+    className="wrapper-body d-flex"
   >
-    <img
-      alt="Logo"
-      src="test-file-stub"
-    />
-    <h1
-      className="app-name"
+    <div
+      className="wrapper"
     >
-      Edit
-    </h1>
+      <img
+        alt="Logo"
+        src="test-file-stub"
+      />
+      <h1
+        className="app-name"
+      >
+        Edit
+      </h1>
+    </div>
   </div>
-</div>
+</Fragment>
 `;

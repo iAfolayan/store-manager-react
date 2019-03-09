@@ -24,11 +24,11 @@ export const userLogin = user => async (dispatch) => {
     console.log(response);
     setToken(response.data.data);
     dispatch(loginSuccess(response.data));
-    toast.success(response.data.message);
+    toast.success(response.data.msg);
   } catch (error) {
     if (error.response) {
       dispatch(loginFailure(error.response));
-      toast.error(error.response.data.message);
+      toast.error(error.response.data.msg);
     }
   }
 };
