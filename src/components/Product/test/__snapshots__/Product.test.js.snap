@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Product Component /> should rendered Product component without crashed 1`] = `
+<Fragment>
+  <h5
+    className="ml-3 text-primary"
+  >
+    Create Product
+  </h5>
+  <hr
+    className="mr-5"
+  />
+  <div
+    className="col-md-6 formWrapper"
+  >
+    <form
+      onSubmit={[Function]}
+    >
+      <InputForm
+        error=""
+        id="productName"
+        label="productName"
+        name="productName"
+        onChange={[Function]}
+        placeholder="Name"
+        text="Name"
+        type="text"
+        value=""
+      />
+      <small
+        className="form-text text-muted"
+        id="nameHelp"
+      >
+        Product name is required.
+      </small>
+      <div
+        className="form-group"
+      >
+        <label
+          className="text-sm-left"
+          htmlFor="category"
+        >
+          Category
+        </label>
+        <select
+          className="form-control"
+          name="category"
+          onChange={[Function]}
+        >
+          <option
+            disabled={true}
+            value=""
+          >
+            Select a category
+          </option>
+          <option
+            value="Mobile"
+          >
+            Mobile
+          </option>
+        </select>
+      </div>
+      <div
+        className="form-group"
+      >
+        <label
+          className="text-sm-left"
+          htmlFor="description"
+        >
+          Description
+        </label>
+        <textarea
+          className="form-control"
+          id="description"
+          name="description"
+          onChange={[Function]}
+          placeholder="Description"
+          value=""
+        />
+        <small
+          className="form-text text-muted"
+          id="descHelp"
+        >
+          Give a descriptive information about product
+        </small>
+      </div>
+      <InputForm
+        error=""
+        id="price"
+        label="price"
+        name="price"
+        onChange={[Function]}
+        placeholder="Enter price"
+        text="Price"
+        type="number"
+        value=""
+      />
+      <InputForm
+        error=""
+        id="minimumAllowed"
+        label="minimumAllowed"
+        name="minimumAllowed"
+        onChange={[Function]}
+        placeholder="Enter minimum sales allowed"
+        text="Minimun Sales Allowed"
+        type="number"
+        value=""
+      />
+      <div
+        className="form-group"
+      >
+        <label
+          htmlFor="image text-sm-left"
+        >
+          Image
+        </label>
+        <input
+          className="form-control-file"
+          id="image"
+          type="file"
+        />
+        <small
+          className="form-text text-muted"
+          id="productHelp"
+        >
+          Upload product image
+        </small>
+      </div>
+      <button
+        className="btn btn-outline-primary float-right"
+      >
+        Add product
+      </button>
+    </form>
+  </div>
+</Fragment>
+`;
