@@ -1,3 +1,5 @@
+$primarycolor: #0f488a;
+
 .productHolderCard{
 	max-height: 360px;
 	max-width: 222px;
@@ -44,7 +46,7 @@
 	overflow: hidden;
 	height: 0%; 
 	transition: height 0.5s;
-	background: var(--primaryColor);;
+	background: $primarycolor;
 	color: white;
 	display: flex;
 	align-items:center;

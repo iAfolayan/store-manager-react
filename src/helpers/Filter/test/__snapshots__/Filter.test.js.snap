@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filter Component should render filter component without crashed 1`] = `
+<div
+  className="col-sm-12 filter"
+>
+  <form
+    className="form-group"
+  >
+    <input
+      className="form-control col-md-3"
+      placeholder="Filter product by name"
+      type="search"
+    />
+  </form>
+</div>
+`;

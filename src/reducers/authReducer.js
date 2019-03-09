@@ -24,28 +24,28 @@ export default (state = auth, action) => {
       return {
         authIsLoading: false,
         success: true,
-        response: action.payload.data.message,
+        response: action.payload.data.msg,
         isAuthenticated: false
       };
     case SIGNUP_FAILURE:
       return {
         authIsLoading: false,
         success: false,
-        response: action.payload.data.message,
+        response: action.payload.data.msg,
         isAuthenticated: false
       };
     case LOGIN_SUCCESS:
       return {
         authIsLoading: false,
         success: true,
-        response: action.payload.data.message,
+        response: action.payload.data.msg,
         isAuthenticated: true
       };
     case LOGIN_FAILURE:
       return {
         authIsLoading: false,
         success: false,
-        response: action.payload.data.message,
+        response: action.payload.data.msg,
         isAuthenticated: false
       };
     case NETWORK_ERROR:

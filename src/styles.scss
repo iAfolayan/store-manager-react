@@ -1,72 +1,15 @@
-$color_1: #FFF;
-$color_2: #fff;
-$color_3: white;
-$color_4: var(--primaryColor);
-$color_5: #000;
-$color_6: #f00;
-$color_7: #F00;
-$color_8: var(--white);
-$color_9: black;
-$color_10: #ffffff;
-$font_family_1: Roboto, Lato, Montserrat;
-$background_color_1: #1c41a9;
-$background_color_2: var(--primaryColor);
-$background_color_3: #941313;
-$background_color_4: #0f8a3a;
-$background_color_5: #5791da;
-$background_color_6: green;
-$background_color_7: #043977;
-$background_color_8: rgba(0, 0, 0, 0.5);
-$background_color_9: white;
-$background_color_10: lightgray;
-$background_color_11: darkgray;
-$border_color_1: var(--primaryColor);
-$border_color_2: #ece9e9b0;
-
 @import "https://fonts.googleapis.com/css?family=Lato|Montserrat|Roboto";
-/* Global messages */
-/* End of Messages */
-/* Login Form styling */
-/* DASHBOARD */
-/* PRODUCT STYLING */
-/*Styles books page*/
-/* END OF PRODUCT STYLING */
-/* CREATE USER FORM STYLING */
-/* END OF CREATE USER FORM */
-/* Modify Product Holder */
-/* TABLE STYLING */
-/* PRODUCT DETAILS */
-/* ENDING OF PRODUCT DETAILS */
-/* MOBILE MENU STYLING */
-/* User profile Styling */
-/* Ending of user Profile styling */
-/* MODAL STYLING */
-/* ENDING OF MODAL STYLING */
-/* Cart Info */
-/* End of Cart Info */
-/*******************************************************/
-/****Content Area Media Queries for phones and tabs*****/
-/*******************************************************/
-/* Small devices (tablets, 768px and up) */
-/* Medium devices (desktops, 992px and up) */
-/* PAGE WRAPPER */
-/* LOGIN STYLING */
-/* DASHBOARD */
-/* CREATE USER FORM */
-/* TABLE STYLING */
-/* EDIT PRODUCT */
-/* MOBILE MENU STYLING */
-/* Large devices (large desktops, 1200px and up) */
-&:root {
-	--primarycolor: #0f488a;
-	--black: #000;
-	--white: #fff;
-}
+
+$font-family: Roboto, Lato, Montserrat;
+$primarycolor: #0f488a;
+$black: #000;
+$white: #fff;
+
 body {
 	margin: 0;
 	padding: 0;
 	font-size: 100%;
-	font-family: $font_family_1;
+	font-family: $font-family;
 }
 html {
 	margin: 0;
@@ -92,7 +35,7 @@ ul {
 	line-height: 40px;
 	border-radius: 5px;
 	margin-bottom: 20px;
-	color: $color_1;
+	color: #fff;
 	transition: cubic-bezier(0.95, 0.05, 0.795, 0.035);
 	box-shadow: 0px 0px 7px #008000;
 	background: green;
@@ -106,7 +49,7 @@ ul {
 	line-height: 40px;
 	border-radius: 5px;
 	margin-bottom: 20px;
-	color: $color_1;
+	color: #fff;
 	transition: cubic-bezier(0.95, 0.05, 0.795, 0.035);
 	box-shadow: 0px 0px 3px #ff0000c7;
 	background: red;
@@ -130,15 +73,15 @@ a {
 	padding: 20px;
 	padding-top: 10px;
 	a {
-		color: $color_2;
+		color: #fff;
 		&:hover {
-			color: $color_2;
+			color: #fff;
 		}
 	}
 	h1 {
 		font-size: 2em;
 		text-align: center;
-		color: $color_2;
+		color: #fff;
 	}
 }
 .clearAll {
@@ -155,30 +98,16 @@ a {
 	border-radius: 5px;
 	margin-bottom: 15px;
 	&:focus {
-		border-color: $border_color_1;
+		border-color: $primarycolor;
 		outline: 0;
 		box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
 		-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
 	}
 }
-input[type=search] {
-	width: 94%;
-	outline: none;
-	padding: 10px;
-	margin: 0 auto;
-	border: 1px solid #000;
-	border-radius: 5px;
-	margin-bottom: 15px;
-	width: 70%;
-	cursor: pointer;
-	float: left;
-	padding: 7px;
-	margin-top: 8px;
-	border-radius: 4px;
-}
+
 .loginBtn {
-	background-color: $background_color_1;
-	color: $color_2;
+	background-color: #1c41a9;
+	color: #fff;
 	width: 100%;
 	padding: 15px;
 	outline: none;
@@ -188,14 +117,14 @@ input[type=search] {
 	border-radius: 5px;
 	margin-top: 15px;
 	&:hover {
-		background-color: $background_color_2;
+		background-color: $primarycolor;
 		cursor: pointer;
 		transition: background 1s;
 	}
 }
 .editBtn {
-	background-color: $background_color_1;
-	color: $color_2;
+	background-color: #1c41a9;
+	color: #fff;
 	width: 100%;
 	padding: 15px;
 	outline: none;
@@ -210,11 +139,11 @@ input[type=search] {
 	letter-spacing: 0px;
 	text-align: center;
 	text-transform: inherit;
-	background-color: $background_color_4;
+	background-color: #0f8a3a;
 }
 .deleteBtn {
-	background-color: $background_color_1;
-	color: $color_2;
+	background-color: #1c41a9;
+	color: #fff;
 	width: 100%;
 	padding: 15px;
 	outline: none;
@@ -229,14 +158,14 @@ input[type=search] {
 	letter-spacing: 0px;
 	text-align: center;
 	text-transform: inherit;
-	background-color: $background_color_3;
+	background-color: #941313;
 }
 label {
 	font-weight: bold;
-	color: $color_3;
+	color: #fff;
 }
 .recPassword {
-	color: $color_2;
+	color: #fff;
 	text-align: center;
 	display: block;
 	margin-top: 20px;
@@ -248,7 +177,7 @@ label {
 footer {
 	width: 95%;
 	text-align: center;
-	color: $color_2;
+	color: #fff;
 	position: fixed;
 	bottom: 0%;
 	padding-top: 2px;
@@ -273,7 +202,7 @@ footer {
 	width: 100%;
 	footer {
 		text-align: center;
-		color: $color_5;
+		color: $black;
 	}
 }
 .mainPage {
@@ -283,7 +212,7 @@ footer {
 	margin-bottom: 50px;
 	hr {
 		width: 95%;
-		border-color: $border_color_2;
+		border-color: #ece9e9b0;
 	}
 }
 .searchForm {
@@ -298,7 +227,7 @@ footer {
 	margin-left: 3px;
 	background: var(--primaryColor);
 	padding: 8px;
-	color: $color_2;
+	color: #fff;
 	border: none;
 	cursor: pointer;
 	float: left;
@@ -317,7 +246,7 @@ footer {
 		font-size: 40px;
 		padding: 0;
 		margin: 20px;
-		color: $color_4;
+		color: $primarycolor;
 	}
 }
 .productHolder {
@@ -329,7 +258,7 @@ footer {
 		margin-left: 20px;
 		margin-bottom: 30px;
 		padding-bottom: 15px;
-		color: $color_4;
+		color: $primarycolor;
 		border-bottom: 1px solid #fbf8f8;
 		border-width: thin;
 		width: 90%;
@@ -376,7 +305,7 @@ footer {
 		height: 0%;
 		transition: height 0.5s;
 		background: var(--primaryColor);
-		color: $color_3;
+		color: #fff;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -399,7 +328,7 @@ footer {
 	}
 	a {
 		text-decoration: none;
-		color: $color_5;
+		color: $black;
 	}
 }
 .product-title {
@@ -426,15 +355,15 @@ article {
 	}
 }
 button {
-	background-color: $background_color_5;
-	color: $color_2;
+	background-color: #5791da;
+	color: #fff;
 	padding: 8px;
 	border: none;
 	margin-bottom: 10px;
 	border-radius: 5px;
 	cursor: pointer;
 	&:hover {
-		background-color: $background_color_2;
+		background-color: $primarycolor;
 	}
 }
 .userFormControl {
@@ -442,7 +371,7 @@ button {
 		margin-left: 20px;
 		margin-bottom: 30px;
 		padding-bottom: 15px;
-		color: $color_4;
+		color: $primarycolor;
 		border-bottom: 1px solid #fbf8f8;
 		border-width: thin;
 		width: 90%;
@@ -457,7 +386,7 @@ button {
 	margin-top: 50px;
 	border-radius: 10px;
 	label {
-		color: $color_5;
+		color: $black;
 	}
 }
 .modifyProduct {
@@ -465,7 +394,7 @@ button {
 		margin-left: 20px;
 		margin-bottom: 30px;
 		padding-bottom: 15px;
-		color: $color_4;
+		color: $primarycolor;
 		border-bottom: 1px solid #fbf8f8;
 		border-width: thin;
 		width: 90%;
@@ -495,7 +424,7 @@ button {
 	float: left;
 }
 sup {
-	color: $color_6;
+	color: #F00;
 }
 textarea {
 	resize: none;
@@ -516,18 +445,18 @@ textarea {
 	}
 }
 thead {
-	background-color: $background_color_2;
-	color: $color_1;
+	background-color: $primarycolor;
+	color: #fff;
 	text-transform: uppercase;
 }
 caption {
 	text-align: left;
 	font-size: 20px;
-	color: $color_4;
+	color: $primarycolor;
 	padding-bottom: 10px;
 	padding-top: 20px;
 	>span {
-		color: $color_7;
+		color: #F00;
 		font-weight: bold;
 	}
 }
@@ -536,7 +465,7 @@ caption {
 	width: 100%;
 	text-align: center;
 	>h4 {
-		color: $color_4;
+		color: $primarycolor;
 		border-bottom: 1px solid #ccc;
 		padding-bottom: 15px;
 		border-top: 1px solid #ccc;
@@ -569,7 +498,7 @@ caption {
 }
 .productInformation {
 	>h4 {
-		color: $color_4;
+		color: $primarycolor;
 		border-bottom: 1px solid #ccc;
 		padding-bottom: 15px;
 	}
@@ -581,7 +510,7 @@ caption {
 		margin-top: 20px;
 	}
 	label {
-		color: $color_5;
+		color: $black;
 	}
 }
 .cartSummary {
@@ -617,14 +546,14 @@ caption {
 	width: 100%;
 	font-size: 12px;
 	a {
-		color: $color_4;
+		color: $primarycolor;
 	}
 }
 .subTotal {
 	font-size: 24px;
 	text-align: center;
-	color: $color_7;
-	color: $color_7;
+	color: #F00;
+	color: #F00;
 	font-size: 20px;
 }
 .cartBtn {
@@ -645,7 +574,7 @@ caption {
 }
 .checkoutHolder {
 	width: 100%;
-	background-color: $background_color_6;
+	background-color: green;
 	padding: 10px;
 	height: 300px;
 	.thumbnail {
@@ -683,8 +612,8 @@ caption {
 	width: 94%;
 	min-height: 150px;
 	text-align: center;
-	color: $color_1;
-	background-color: $background_color_2;
+	color: #fff;
+	background-color: $primarycolor;
 	position: fixed;
 	z-index: 50;
 	margin-top: 44px;
@@ -702,13 +631,13 @@ caption {
 	z-index: 1;
 	a {
 		float: none;
-		color: $color_1;
+		color: #fff;
 		padding: 12px 16px;
 		text-decoration: none;
 		display: block;
 		text-align: center;
 		&:hover {
-			background-color: $background_color_7;
+			background-color: #043977;
 		}
 	}
 }
@@ -716,7 +645,7 @@ caption {
 	width: 6%;
 	background: var(--primaryColor);
 	border-radius: 50%;
-	color: $color_1;
+	color: #fff;
 	text-align: center;
 	font-size: 10px;
 	float: right;
@@ -759,7 +688,7 @@ caption {
 	top: 0;
 	width: 100%;
 	height: 100%;
-	background-color: $background_color_8;
+	background-color: rgba(0,0,0,0.5);
 	opacity: 0;
 	visibility: hidden;
 	transform: scale(1.1);
@@ -786,7 +715,7 @@ caption {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	background-color: $background_color_9;
+	background-color: $white;
 	padding: 1rem 1.5rem;
 	width: 15rem;
 	border-radius: 0.5rem;
@@ -798,9 +727,9 @@ caption {
 	text-align: center;
 	cursor: pointer;
 	border-radius: 0.25rem;
-	background-color: $background_color_10;
+	background-color: #1c41a9;
 	&:hover {
-		background-color: $background_color_11;
+		background-color: darkgray;
 	}
 }
 .show-modal {
@@ -832,15 +761,15 @@ caption {
 	z-index: 9;
 }
 .cart-info {
-	color: $color_8;
+	color: $white;
 	border-radius: 0.25rem;
 	padding: 0.4rem 0.6rem;
 	cursor: pointer;
 	min-height: 10rem;
 	background: var(--primaryColor);
 	&:hover {
-		border-color: $border_color_1;
-		color: $color_8;
+		border-color: $primarycolor;
+		color: $white;
 	}
 }
 .show-cart {
@@ -876,7 +805,7 @@ caption {
 	float: left;
 	width: 60%;
 	padding-left: 20px;
-	color: $color_8;
+	color: $white;
 	font-size: 13px;
 	margin-bottom: 15px;
 }
@@ -889,7 +818,7 @@ caption {
 .cartTotal {
 	float: right;
 	font-size: 20px;
-	color: $color_8;
+	color: $white;
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
@@ -897,12 +826,12 @@ caption {
 	background: #550514;
 	width: 90%;
 	padding: 10px;
-	color: $color_1;
+	color: #fff;
 }
 .cartHeading {
 	display: block;
 	text-align: center;
-	color: $color_8;
+	color: $white;
 }
 .item-remove {
 	width: 8%;
@@ -910,12 +839,12 @@ caption {
 	cursor: pointer;
 }
 .userLabel {
-	color: $color_9;
+	color: $black;
 	margin: 10px;
 }
 .countDisplay {
 	font-size: 14px;
-	color: $color_10;
+	color: #fff0;
 	display: inline-block;
 	margin-left: 30px;
 }
@@ -1022,7 +951,7 @@ caption {
 		}
 	}
 	.loginBtn {
-		background-color: $background_color_1;
+		background-color: #1c41a9;
 		width: 30%;
 		float: right;
 		margin-top: 0px;
@@ -1051,10 +980,10 @@ caption {
 	}
 	label {
 		font-weight: bold;
-		color: $color_2;
+		color: #fff;
 	}
 	.recPassword {
-		color: $color_2;
+		color: #fff;
 		text-align: center;
 		display: inline;
 		line-height: 35px;
@@ -1090,7 +1019,7 @@ caption {
 		margin-left: 10px;
 		background: #0f488a;
 		padding: 8px;
-		color: $color_2;
+		color: #fff;
 		border: none;
 		cursor: pointer;
 		float: left;
