@@ -20,7 +20,7 @@ export const LogInValidator = (user) => {
 export const CreateProductValidator = (product) => {
   const errors = {};
 
-  if(Validator.isEmail(product.name)) {
+  if(Validator.isEmpty(product.name)) {
     errors.name = 'This field is required';
   } else if (!Validator.isAlpha(product.name)) {
     errors.name = 'Oops!!! can ONLY be alphabet';
@@ -47,5 +47,17 @@ export const CreateProductValidator = (product) => {
   } else {
     errors.image = '';
   }
+  return errors;
+}
+
+export const ValidateCategory = (name) => {
+  const errors = {};
+
+  if(Validator.isEmail(name)) {
+    errors.name = 'This field is required';
+  } else if (!Validator.isAlpha(name)) {
+    errors.name = 'Oops!!! can ONLY be alphabet';
+  }
+
   return errors;
 }
