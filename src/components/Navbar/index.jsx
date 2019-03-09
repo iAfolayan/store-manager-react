@@ -11,14 +11,9 @@ class Navigation extends Component {
     window.location.replace("http://localhost:5050/")
   }
 
-  render() {
+  renderMenu() {
     return (
-      <div className="sidebar pt-3">
-        <img src={Logo} />
-      <h5 className="d-flex justify-content-center welcomeMessage">Welcome. iAfolayan</h5>
-      <br />
-        <nav className="navbar">
-          <ul>
+      <ul>
 						<li>
               <NavLink to="/products">Home</NavLink>
             </li>
@@ -56,6 +51,17 @@ class Navigation extends Component {
                 <NavLink to="" onClick={this.logout}>Logout</NavLink>
               </li>
 						</ul>
+    );
+  }
+
+  render() {
+    return (
+      <div className="sidebar pt-3">
+        <img src={Logo} />
+      <h5 className="d-flex justify-content-center welcomeMessage">Welcome. iAfolayan</h5>
+      <br />
+        <nav className="navbar">
+          {this.renderMenu()} 
         </nav>
         </div>
     );
