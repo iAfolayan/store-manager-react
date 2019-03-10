@@ -1,11 +1,11 @@
 import { toast } from 'react-toastify';
 import { loginCall } from '../../helpers/axiosHelper/auth';
+import jwtDecode from 'jwt-decode';
 import { setToken } from '../../helpers/jwt';
 import actionTypes from './actionTypes';
-import triggerLoading from './loading';
 
 
-const { AUTH_LOADING, LOGIN_SUCCESS, LOGIN_FAILURE } = actionTypes;
+const { LOGIN_SUCCESS, LOGIN_FAILURE } = actionTypes;
 
 export const loginSuccess = payload => ({
   type: LOGIN_SUCCESS,
@@ -19,25 +19,15 @@ export const loginFailure = payload => ({
 
 export const userLogin = user => async (dispatch) => {
   try {
-    dispatch(triggerLoading(AUTH_LOADING));
     const response = await loginCall(user);
-    console.log(response);
     setToken(response.data.data);
-    dispatch(loginSuccess(response.data));
+    const payLoad = jwtDecode(response.data.data);
+    dispatch(loginSuccess(payLoad));
     toast.success(response.data.msg);
   } catch (error) {
     if (error.response) {
       dispatch(loginFailure(error.response));
       toast.error(error.response.data.msg);
     }
-  }
-};
-
-export const accountActivation = (response, token) => (dispatch) => {
-  if (token) {
-    setToken(token);
-    dispatch(loginSuccess(response));
-  } else {
-    dispatch(loginFailure(response));
   }
 };

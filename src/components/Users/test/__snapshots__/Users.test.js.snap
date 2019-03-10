@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Modify product /> should rendered Modify Component without crashed 1`] = `
+exports[`Users component should rendered users component without crashed 1`] = `
 <ContextConsumer>
   <Component />
 </ContextConsumer>

@@ -3,11 +3,11 @@ import { authentication } from '../constants';
 
 const setToken = token => localStorage.setItem(authentication, token);
 
-const getUserIdFromLocalStorage = () => {
+const getUserDetailsFromLocalStorage = () => {
   const token = localStorage.getItem(authentication);
   try {
     const { payLoad } = jwtDecode(token);
-    return payLoad.id;
+    return payLoad;
   } catch (error) {
     return null;
   }
@@ -19,4 +19,4 @@ const config = {
   headers: { Authorization: getToken }
 };
 
-export { setToken, getToken, config, getUserIdFromLocalStorage };
+export { setToken, getToken, config, getUserDetailsFromLocalStorage };

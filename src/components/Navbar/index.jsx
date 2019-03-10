@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import Logo from './images/logo.PNG';
+// import Logo from './images/logo.PNG';
 import './navbar.scss';
 import { setToken } from '../../helpers/jwt';
+import { connect } from 'react-redux';
 
 
 class Navigation extends Component {
@@ -11,7 +12,7 @@ class Navigation extends Component {
     window.location.replace("http://localhost:5050/")
   }
 
-  renderMenu() {
+  renderAdminMenu() {
     return (
       <ul>
 						<li>
@@ -48,25 +49,55 @@ class Navigation extends Component {
 								</div>
 							</li>
               <li>
-                <NavLink to="" onClick={this.logout}>Logout</NavLink>
+                <NavLink className="p-2" to="" onClick={this.logout}>Logout</NavLink>
               </li>
 						</ul>
     );
   }
 
+  renderSalesAttendantMenu() {
+    return (
+      <ul>
+        <li>
+          <NavLink className="p-2" to="products">Home</NavLink>
+        </li>
+        <li>
+          <NavLink className="p-2" to="sales">Sales</NavLink>
+        </li>
+        <li>
+          <NavLink className="p-2" to="profile">Profile</NavLink>
+        </li>
+        <li>
+          <NavLink className="p-2" to="password">Password</NavLink>
+        </li>
+        <li>
+          <NavLink className="p-2" to="" onClick={this.logout}>Logout</NavLink>
+        </li>
+      </ul>
+    );
+  }
+
   render() {
+    const { response } = this.props.auth;
     return (
       <div className="sidebar pt-3">
-        <img src={Logo} />
-      <h5 className="d-flex justify-content-center welcomeMessage">Welcome. iAfolayan</h5>
-      <hr />
-      <br />
+        <div id="logo"></div>
+        <h2 className="d-flex justify-content-center welcomeMessage">Hi! {response.fullname}</h2>
+        <hr />
+        <br />
         <nav className="navbar">
-          {this.renderMenu()} 
+          { response.role === 1 ? this.renderAdminMenu() : this.renderSalesAttendantMenu() }
         </nav>
         </div>
     );
   }
 }
 
-export default Navigation;
+const mapStateToProps = state => ({
+  auth: state.authReducer
+});
+
+
+export default connect(
+  mapStateToProps,
+)(Navigation);

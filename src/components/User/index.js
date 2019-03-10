@@ -70,17 +70,6 @@ class User extends Component {
                   onChange={this.handleChange}
                 />
                 <InputForm
-                  error={errors.staffId}
-                  text="StaffId"
-                  label="StaffId"
-                  type="text"
-                  name="staffId"
-                  id="StaffId"
-                  value={user.staffId.toUpperCase()}
-                  placeholder="Enter staff Id"
-                  onChange={this.handleChange}
-                />
-                <InputForm
                 error={errors.phoneNumber}
                   text="Phone Number"
                   label="phoneNumber"
@@ -102,6 +91,36 @@ class User extends Component {
                   placeholder="Enter staff emailAddress"
                   onChange={this.handleChange}
                 />
+                <InputForm
+                  error={errors.staffId}
+                  text="StaffId"
+                  label="StaffId"
+                  type="text"
+                  name="staffId"
+                  id="StaffId"
+                  value={user.staffId.toUpperCase()}
+                  placeholder="Enter staff Id"
+                  onChange={this.handleChange}
+                />
+                <InputForm
+                error={errors.password}
+                  text="Password"
+                  label="password"
+                  type="password"
+                  name="password"
+                  id="password"
+                  value={user.password}
+                  placeholder="Enter password"
+                  onChange={this.handleChange}
+                />
+                <div className='form-group'>
+                  <label htmlFor="category" className="text-sm-left">Type of User</label>
+                  <select className="form-control" name="category" onChange={this.handleSelect}>
+                    <option value="" disabled>Make a choice</option>
+                    <option value="1">Admin</option>
+                    <option value="2" selected>Sale Attendant</option>
+                  </select>
+                </div>
                 <button className="btn btn-outline-primary float-right">{isLoading ? 'Loading...' : 'Add User'}</button>
               </form>
             </div>

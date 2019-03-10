@@ -12,6 +12,7 @@ exports[`<NavBar /> should rendered NavBar without crashed 1`] = `
   >
     Welcome. iAfolayan
   </h5>
+  <hr />
   <br />
   <nav
     className="navbar"
@@ -49,7 +50,7 @@ exports[`<NavBar /> should rendered NavBar without crashed 1`] = `
                 activeClassName="active"
                 aria-current="page"
                 className="p-2"
-                to="viewSales"
+                to="sales"
               >
                 View Sales Record
               </NavLink>
@@ -59,7 +60,7 @@ exports[`<NavBar /> should rendered NavBar without crashed 1`] = `
                 activeClassName="active"
                 aria-current="page"
                 className="p-2"
-                to="viewUser"
+                to="users"
               >
                 View users
               </NavLink>

@@ -38,7 +38,7 @@ export default (state = auth, action) => {
       return {
         authIsLoading: false,
         success: true,
-        response: action.payload.data.msg,
+        response: action.payload,
         isAuthenticated: true
       };
     case LOGIN_FAILURE:
