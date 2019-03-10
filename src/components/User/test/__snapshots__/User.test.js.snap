@@ -44,17 +44,6 @@ exports[`User component should rendered user component without crashed 1`] = `
         />
         <InputForm
           error=""
-          id="StaffId"
-          label="StaffId"
-          name="staffId"
-          onChange={[Function]}
-          placeholder="Enter staff Id"
-          text="StaffId"
-          type="text"
-          value=""
-        />
-        <InputForm
-          error=""
           id="phoneNumber"
           label="phoneNumber"
           name="phoneNumber"
@@ -75,6 +64,59 @@ exports[`User component should rendered user component without crashed 1`] = `
           type="email"
           value=""
         />
+        <InputForm
+          error=""
+          id="StaffId"
+          label="StaffId"
+          name="staffId"
+          onChange={[Function]}
+          placeholder="Enter staff Id"
+          text="StaffId"
+          type="text"
+          value=""
+        />
+        <InputForm
+          error=""
+          id="password"
+          label="password"
+          name="password"
+          onChange={[Function]}
+          placeholder="Enter password"
+          text="Password"
+          type="password"
+        />
+        <div
+          className="form-group"
+        >
+          <label
+            className="text-sm-left"
+            htmlFor="category"
+          >
+            Type of User
+          </label>
+          <select
+            className="form-control"
+            name="category"
+          >
+            <option
+              disabled={true}
+              value=""
+            >
+              Make a choice
+            </option>
+            <option
+              value="1"
+            >
+              Admin
+            </option>
+            <option
+              selected={true}
+              value="2"
+            >
+              Sale Attendant
+            </option>
+          </select>
+        </div>
         <button
           className="btn btn-outline-primary float-right"
         >

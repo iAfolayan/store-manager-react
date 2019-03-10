@@ -30,6 +30,9 @@ $white: #fff;
   color: $white;
   padding-bottom: 10px;
 }
+label.text-sm-left {
+  color: white !important;
+}
 
 // Small devices (landscape phones, 576px and up)
 @media (max-width: 576px) {

@@ -7,4 +7,10 @@ describe('Category component', () => {
     const wrapper = shallow(<Category />);
     expect(wrapper).toMatchSnapshot();
   })
+
+  test('should simulate handleSubmit', () => {
+    const wrapper = shallow(<Category />);
+    wrapper.simulate().handleSubmit();
+    expect(wrapper).toBeDefined();
+  });
 });

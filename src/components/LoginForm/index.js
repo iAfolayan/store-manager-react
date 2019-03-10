@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { userLogin } from '../../actions/authActions/authActions';
 import InputForm from '../InputForms';
+// import { getUserDetailsFromLocalStorage } from '../../helpers/jwt';
 
 class LoginForm extends Component {
   constructor(props) {
@@ -32,6 +33,12 @@ class LoginForm extends Component {
     }
     const { login } = this.props;
     login(user);
+
+    // if (this.props.auth.isAuthenticated) {
+      
+    // }
+    // const userInfo = getUserDetailsFromLocalStorage();
+    // console.log('----->', userInfo)
   }
 
   handleChange(event) {

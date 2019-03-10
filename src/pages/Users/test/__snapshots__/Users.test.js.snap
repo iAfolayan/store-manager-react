@@ -1,19 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Modify page should rendered Modify page without crashed 1`] = `
+exports[`User page should rendered user page without crashed 1`] = `
 <Fragment>
   <div
     className="form-group row"
   >
     <div
-      className="col-md-2"
+      className="col-sm-12 col-md-2"
     >
       <Navigation />
     </div>
     <div
-      className="col-md-10"
+      className="col-sm-12 col-md-10"
     >
-      <Connect(Modify) />
+      <Connect(Users) />
       <Footer
         footerClassName="footer inner"
       />
