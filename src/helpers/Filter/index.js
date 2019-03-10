@@ -3,7 +3,7 @@ import './Filter.scss';
 
 class Filter extends Component {
 	render() {
-		const { handleChange, filterproduct} = this.props;
+		const { handleChange, value} = this.props;
 		return (
 			<div className="col-sm-12 filter">
 				<form className="form-group">
@@ -12,7 +12,7 @@ class Filter extends Component {
 						className="form-control col-md-3"
 						placeholder="Filter product by name"
 						onChange={handleChange}
-						filterproduct={filterproduct}
+						value={value}
 					/>
 				</form>
 			</div>

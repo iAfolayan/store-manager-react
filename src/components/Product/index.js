@@ -83,6 +83,7 @@ class Product extends Component {
               <select className="form-control" name="category" onChange={this.handleChange} value={product.category}>
                 <option value="">Select a category</option>
                 <option value="Mobile">Mobile</option>
+                <option value="Technology">Technology</option>
               </select>
             </div>
             <div className="form-group">

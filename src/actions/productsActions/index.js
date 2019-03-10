@@ -10,6 +10,8 @@ const {
   PRODUCTS_FAILURE ,
   CREATE_PRODUCT_RESPONSE,
   CREATING_PRODUCT,
+  ADD_TO_CART,
+  REMOVE_FROM_CART
   } = actionTypes;
 
 export const productsSuccess = payload => ({
@@ -19,6 +21,16 @@ export const productsSuccess = payload => ({
 
 export const productsFailure = payload => ({
   type: PRODUCTS_FAILURE,
+  payload
+});
+
+const addToCart = payload => ({
+  type: ADD_TO_CART,
+  payload
+});
+
+const removeProductFromCart = payload => ({
+  type: REMOVE_FROM_CART,
   payload
 });
 
@@ -54,3 +66,11 @@ export const createProduct = (productDetails) => async (dispatch) => {
     }
   }
 };
+
+export const addProductToCart = productId => dispatch => {
+  dispatch(addToCart(productId));
+}
+
+export const removeFromCart = cartIndex => dispatch => {
+  dispatch(removeProductFromCart(cartIndex));
+}

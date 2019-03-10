@@ -17,11 +17,13 @@ class Products extends Component {
 	}
 	
 	render() {
-		const { products } = this.props.products;
-		// const { filterproduct } = this.state;
-		// const filterProducts = products.filter((product) => {
-		// 	return product.name.toLowerCase().includes(filterproduct.toLowerCase());
-		// });
+		let { products } = this.props.products;
+		const { filterQuery } = this.props;
+		products = filterQuery ?
+								products.filter((product) => {
+									return product.productname.toLowerCase().includes(filterQuery.toLowerCase());
+								})
+								: products;
 		
 		if (products.length === 0) {
 			return <div className="text-danger text-center"><h3>No Product found...</h3></div>

@@ -10,7 +10,8 @@ const initialState = {
     success: false,
     successResponse: {},
     failureResponse: {},
-    products: []
+    products: [],
+    cart: []
   },
   user: {
     userIsLoading: false,
