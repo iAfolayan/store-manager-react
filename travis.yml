@@ -1,18 +1,25 @@
+sudo: required
 language: node_js
+
 node_js:
-  - 'node'
-env:
-  global:
-    - CC_TEST_REPORTER_ID=$COVERALLS_REPO_TOKEN API_BASE_URL=https://store-manager-iafolayan.herokuapp.com/api/v1
+  - '11.10.1'
+
 cache:
   directories:
     - node_modules
+
+env:
+  - global:
+      - NODE_ENV = test
+      - CC_TEST_REPORTER_ID=$COVERALLS_REPO_TOKEN
+
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
-  - psql -c 'create database styore_manager_react_test;' -U postgres
+
 script:
-  - npm test -- -u
+  - npm test
+
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT

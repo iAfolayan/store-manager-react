@@ -1,7 +1,8 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { BrowserRouter as Router } from 'react-router-dom';
-import LoginForm from '.';
+import LoginForm, { LoginForm as LoginFormUnit} from '.';
+
 
 describe('<LoginForm />', () => {
   test('should render login form', () => {
@@ -31,17 +32,23 @@ describe('<LoginForm />', () => {
     expect(wrapper.find('input[type="password"]').prop('name')).toContain('password');
   });
 
-  // test('pass a selected value to the onChange handler', () => {
-  //   const wrapper = mount(<LoginForm />);
-  //   wrapper.instance().handleChange();
-  //   expect(wrapper).toBeDefined();
-  // });
+  test('should redirect if user is authenticated', () => {
+    props.auth.isAuthenticated = true;
+    const wrapper = shallow(<LoginFormUnit {...props} />);
+    expect(wrapper.is(Redirect)).toEqual(true);
+  });
 
-  // it('Simulate submit button ', () => {
-  //   const wrapper = shallow(<LoginForm />);
-  //   wrapper.find('form').simulate('submit', {
-  //     preventDefault: jest.fn()
-  //   });
-  //   expect(wrapper.find('form')).toBeDefined();
-  // });
+  test('should login the user after providing logon information', () => {
+    const wrapper = mount(<LoginFormUnit {...props} />);
+
+    const staffId = wrapper.find('input[name="staffId"]');
+    const password = wrapper.find('input[name="password"]');
+    const loginForm = wrapper.find('button[type="submit"]');
+
+    staffId.simulate('change', { taget: { value: 'SM001' } });
+    password.simulate('change', { taget: { value: 'blahbalh' } });
+    loginForm.simulate('submit');
+
+    expect(props.handleSubmit).toHaveBeenCalled();
+  });
 });

@@ -1,21 +1,7 @@
 import React, { Component, Fragment} from 'react';
-import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import prodImage5 from '../../images/5.PNG';
 import './Modify.scss';
-import { Pagination } from 'reactstrap';
-
-function mapStateToProps(state) {
-  return {
-
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-
-  };
-}
 
 class Modify extends Component {
 
@@ -79,6 +65,4 @@ class Modify extends Component {
   }
 }
 
-export default connect(
-  mapStateToProps,
-)(Modify);
+export default Modify;
