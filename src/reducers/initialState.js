@@ -11,6 +11,12 @@ const initialState = {
     successResponse: {},
     failureResponse: {},
     products: []
+  },
+  user: {
+    userIsLoading: false,
+    success: false,
+    failureResponse: {},
+    successResponse: {}
   }
 };
 

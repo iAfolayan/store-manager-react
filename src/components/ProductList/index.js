@@ -25,7 +25,7 @@ class  ProductList extends Component {
 							<h5 className="card-header text-center">
 								<strong>{product.name}</strong>
 							</h5>
-							<Link to="/view/"{...product.id }>
+							<Link to={`/view/${product.id}`}>
 								<div className="img-holder">
 									<CardImg className="cart-image" src={product.image} alt="" />
 									<div className="img-overlay">

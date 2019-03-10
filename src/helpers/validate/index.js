@@ -19,10 +19,8 @@ export const LogInValidator = (user) => {
 export const CreateProductValidator = (product) => {
   const errors = {};
 
-  if(Validator.isEmpty(product.name)) {
-    errors.name = 'This field is required';
-  } else if (!Validator.isAlpha(product.name)) {
-    errors.name = 'Oops!!! can ONLY be alphabet';
+  if(Validator.isEmpty(product.productname)) {
+    errors.productname = 'This field is required';
   }
   if(Validator.isEmpty(product.price)) {
     errors.price = 'This field is required';
@@ -33,18 +31,11 @@ export const CreateProductValidator = (product) => {
     errors.description = 'This field is required';
   } else if(!Validator.isLength(product.description, { max: 255 })) {
     errors.description = 'Oops!!! exceed description length';
-  } else {
-    errors.description = '';
   }
-  if(Validator.isEmpty(product.minimumAllowed)) {
-    errors.minimumAllowed = 'This field is required';
-  } else if (!Validator.isInt(product.minimumAllowed)) {
-    errors.minimumAllowed = 'Oops!!! enter a valid number';
-  }
-  if(Validator.isEmpty(product.image)) {
-    errors.image = 'This field is required';
-  } else {
-    errors.image = '';
+  if(Validator.isEmpty(product.minimumallowed)) {
+    errors.minimumallowed = 'This field is required';
+  } else if (!Validator.isInt(product.minimumallowed)) {
+    errors.minimumallowed = 'Oops!!! enter a valid number';
   }
   return errors;
 }
@@ -66,23 +57,19 @@ export const CreateUserValidator = (user) => {
 
   if(Validator.isEmpty(user.title)) {
     errors.title = 'This field is required'
-  } else if(!Validator.isAlpha(user.title)) {
-    errors.title = 'Oops!!! can ONLY be alphabet';
   }
   if (Validator.isEmpty(user.staffId)) {
     errors.staffId = 'This field is required';
   } else if (!Validator.contains(user.staffId, 'SM')) {
     errors.staffId = 'Oops!!! Invalid StaffId must contain "SM"';
   }
-  if (Validator.isEmpty(user.phoneNumber)) {
-    errors.phoneNumber = 'This field is required';
-  } else if (!Validator.isMobilePhone(user.phoneNumber)) {
-    errors.phoneNumber = 'Oops!!! Invalid input';
+  if (Validator.isEmpty(user.phonenumber)) {
+    errors.phonenumber = 'This field is required';
+  } else if (!Validator.isMobilePhone(user.phonenumber)) {
+    errors.phonenumber = 'Oops!!! Invalid input';
   }
   if(Validator.isEmpty(user.fullname)) {
     errors.fullname = 'This field is required'
-  } else if(!Validator.isAlpha(user.fullname)) {
-    errors.fullname = 'Oops!!! can ONLY be alphabet';
   }
   return errors;
 }

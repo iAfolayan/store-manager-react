@@ -7,7 +7,6 @@ export const getProducts = async () => {
   return response;
 };
 
-export const getAnArticle = (productid) => {
-  const response = axios.get(`${API_BASE_URL}/api/v1/products/${productid}`, config);
-  return response;
-};
+export const createTheProduct = (productDetails) => {
+  return axios.post(`${API_BASE_URL}/products`, productDetails, config());
+}
