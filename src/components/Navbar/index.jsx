@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-// import Logo from './images/logo.PNG';
-import './navbar.scss';
 import { setToken } from '../../helpers/jwt';
 import { connect } from 'react-redux';
+import './navbar.scss';
 
 
 class Navigation extends Component {

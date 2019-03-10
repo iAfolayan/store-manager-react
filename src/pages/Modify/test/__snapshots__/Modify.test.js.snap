@@ -13,7 +13,7 @@ exports[`Modify page should rendered Modify page without crashed 1`] = `
     <div
       className="col-md-10"
     >
-      <Connect(Modify) />
+      <Modify />
       <Footer
         footerClassName="footer inner"
       />
