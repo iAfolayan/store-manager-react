@@ -8,7 +8,7 @@ exports[`Category page should rendered category page without crashed 1`] = `
     <div
       className="col-md-2"
     >
-      <Navigation />
+      <Connect(Navigation) />
     </div>
     <div
       className="col-md-10"

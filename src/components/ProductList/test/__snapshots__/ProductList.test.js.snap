@@ -1,11 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<ProductList /> should test product info 1`] = `
-<div>
-  <p
-    className="mx-auto"
-  >
-    You don't have any product to display.
-  </p>
-</div>
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;

@@ -1,9 +1,9 @@
 import jwtDecode from 'jwt-decode';
 import { authentication } from '../constants';
 
-const setToken = token => localStorage.setItem(authentication, token);
+export const setToken = token => localStorage.setItem(authentication, token);
 
-const getUserDetailsFromLocalStorage = () => {
+export const getUserDetailsFromLocalStorage = () => {
   const token = localStorage.getItem(authentication);
   try {
     const { payLoad } = jwtDecode(token);
@@ -13,10 +13,6 @@ const getUserDetailsFromLocalStorage = () => {
   }
 };
 
-const getToken = localStorage.getItem(authentication);
-
-const config = {
-  headers: { Authorization: getToken }
-};
-
-export { setToken, getToken, config, getUserDetailsFromLocalStorage };
+export const config = () => ({
+  headers: { Authorization: localStorage.getItem(authentication) }
+});
