@@ -1,13 +1,6 @@
 import React, { Component, Fragment } from 'react';
-import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import './Users.scss';
-
-function mapStateToProps(state) {
-  return {
-
-  };
-}
 
 class Users extends Component {
   render() {
@@ -59,6 +52,4 @@ class Users extends Component {
   }
 }
 
-export default connect(
-  mapStateToProps,
-)(Users);
+export default Users;

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Product Component /> should rendered Product component without crashed 1`] = `
+exports[`<Product Component /> should rendered Product component without crashing 1`] = `
 <Fragment>
   <h5
     className="ml-3 text-primary"

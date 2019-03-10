@@ -43,8 +43,8 @@ class Product extends Component {
     if (errors) {
       this.setState({ errors });
     }
-    // const { login } = this.props;
-    // login(product);
+    // const { product } = this.props;
+    // product(product);
   }
 
   render() {

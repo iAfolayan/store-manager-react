@@ -9,13 +9,13 @@ describe('Filter Component', () => {
   })
 
   test('should test onchange event', () => {
-    const wrapper = shallow(<Filter onChange={handleChange} />);
+    const wrapper = shallow(<Filter />);
     wrapper.instance().handleChange();
     expect(wrapper).toBeDefined();
   })
 
  test('should simulate filter', () => {
-    const wrapper = shallow(<Filter filterproduct={filterproduct} />);
+    const wrapper = shallow(<Filter />);
     wrapper.instance().filterproduct();
     expect(wrapper).toBeDefined();
   });

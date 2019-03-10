@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import Category from '..';
 
 describe('Category component', () => {
@@ -9,8 +9,14 @@ describe('Category component', () => {
   })
 
   test('should simulate handleSubmit', () => {
-    const wrapper = shallow(<Category />);
+    const wrapper = mount(<Category />);
     wrapper.simulate().handleSubmit();
+    expect(wrapper).toBeDefined();
+  });
+
+  test.only('should simulate onChange event', () => {
+    const wrapper = mount(<Category />);
+    wrapper.instance().handleChange();
     expect(wrapper).toBeDefined();
   });
 });

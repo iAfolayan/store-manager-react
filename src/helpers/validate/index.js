@@ -10,10 +10,9 @@ export const LogInValidator = (user) => {
   }
   if (Validator.isEmpty(user.password)) {
     errors.password = 'Password field is required';
+  } else if (!new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,20}$', 'g').test(user.password)) {
+    errors.password = 'Password must be at least 8 characters, 1 uppercase letter, 1 number';
   }
-  // } else if (!new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,20}$', 'g').test(user.password)) {
-  //   errors.password = 'Password must be at least 8 characters, 1 uppercase letter, 1 number';
-  // }
   return errors;
 };
 
@@ -53,7 +52,7 @@ export const CreateProductValidator = (product) => {
 export const ValidateCategory = (name) => {
   const errors = {};
 
-  if(Validator.isEmail(name)) {
+  if(Validator.isEmpty(name)) {
     errors.name = 'This field is required';
   } else if (!Validator.isAlpha(name)) {
     errors.name = 'Oops!!! can ONLY be alphabet';

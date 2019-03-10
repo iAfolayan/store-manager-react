@@ -2,7 +2,6 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Products from '.';
-import { importSpecifier } from '@babel/types';
 
 describe('<Products />', () => {
   test('should render product display without crashed', () => {
@@ -11,7 +10,8 @@ describe('<Products />', () => {
   });
 
   test('should simulate onChange event', () => {
-    const wrapper = mount(<Router><Products /></Router>);
+    const wrapper = shallow(<Router><Products /></Router>);
+    handleChange = jest.fn();
     wrapper.instance().handleChange();
     expect(wrapper).toBeDefined();
   });

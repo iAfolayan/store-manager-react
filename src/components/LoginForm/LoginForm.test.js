@@ -34,12 +34,12 @@ describe('<LoginForm />', () => {
 
   test('should redirect if user is authenticated', () => {
     props.auth.isAuthenticated = true;
-    const wrapper = shallow(<LoginFormUnit {...props} />);
+    const wrapper = shallow(<LoginFormUnit />);
     expect(wrapper.is(Redirect)).toEqual(true);
   });
 
   test('should login the user after providing logon information', () => {
-    const wrapper = mount(<LoginFormUnit {...props} />);
+    const wrapper = mount(<LoginFormUnit />);
 
     const staffId = wrapper.find('input[name="staffId"]');
     const password = wrapper.find('input[name="password"]');

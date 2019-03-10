@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`User component should rendered user component without crashed 1`] = `
+exports[`User component should rendered user component without crashing 1`] = `
 <Fragment>
   <h5
     className="ml-3 text-primary"
