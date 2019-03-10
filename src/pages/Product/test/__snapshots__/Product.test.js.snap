@@ -8,7 +8,7 @@ exports[`<Product page /> should rendered product page without crashed 1`] = `
     <div
       className="col-sm-12 col-md-2"
     >
-      <Navigation />
+      <Connect(Navigation) />
     </div>
     <div
       className="col-sm-12 col-md-10"

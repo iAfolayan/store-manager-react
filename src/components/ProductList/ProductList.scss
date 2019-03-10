@@ -1,13 +1,5 @@
 $primarycolor: #0f488a;
 
-.productHolderCard{
-	max-height: 360px;
-	max-width: 222px;
-	border-radius: 5px;
-	padding-bottom: 15px;
-	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
-	margin: auto;
-}
 .card {
   margin: 20px 0px;
 }
@@ -69,6 +61,10 @@ $primarycolor: #0f488a;
 	justify-content: space-between;
 	margin-bottom: 25px;
 	text-align: center;
+}
+.dets {
+		width: 100%;
+    margin: 0;
 }
 
 .card a {

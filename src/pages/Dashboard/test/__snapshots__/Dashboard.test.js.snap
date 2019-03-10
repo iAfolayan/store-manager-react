@@ -8,13 +8,13 @@ exports[`Dashboard should rendered Dashboard without crashed 1`] = `
     <div
       className="col-md-2"
     >
-      <Navigation />
+      <Connect(Navigation) />
     </div>
     <div
       className="col-md-10"
     >
       <Filter />
-      <Products />
+      <Connect(Products) />
       <Footer
         footerClassName="footer inner"
       />
