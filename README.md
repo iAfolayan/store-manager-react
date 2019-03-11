@@ -1,9 +1,9 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/fad92ef7cd5927acd2ca/maintainability)](https://codeclimate.com/github/iAfolayan/store-manager-react/maintainability)
 
-[![Test Coverage](https://api.codeclimate.com/v1/badges/fad92ef7cd5927acd2ca/test_coverage)](https://codeclimate.com/github/iAfolayan/store-manager-react/test_coverage)
+[![Build Status](https://travis-ci.org/iAfolayan/store-manager-react.svg?branch=develop)](https://travis-ci.org/iAfolayan/store-manager-react)
 
-[![Build Status](https://travis-ci.com/iAfolayan/store-manager-react.svg?branch=develop)](https://travis-ci.com/iAfolayan/store-manager-react)
+[![Coverage Status](https://coveralls.io/repos/github/iAfolayan/store-manager-react/badge.svg?branch=develop)](https://coveralls.io/github/iAfolayan/store-manager-react?branch=develop)
 
 # store-manager-react
 
