@@ -37,6 +37,9 @@ export const CreateProductValidator = (product) => {
   } else if (!Validator.isInt(product.minimumallowed)) {
     errors.minimumallowed = 'Oops!!! enter a valid number';
   }
+  if(Validator.isEmpty(product.productImage)) {
+    errors.productImage = 'Product Image field is required';
+  }
   return errors;
 }
 

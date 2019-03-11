@@ -24,12 +24,12 @@ export const productsFailure = payload => ({
   payload
 });
 
-const addToCart = payload => ({
+export const addToCart = payload => ({
   type: ADD_TO_CART,
   payload
 });
 
-const removeProductFromCart = payload => ({
+export const removeProductFromCart = payload => ({
   type: REMOVE_FROM_CART,
   payload
 });

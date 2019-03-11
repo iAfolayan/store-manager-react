@@ -5,7 +5,7 @@ import { Card, CardImg } from 'reactstrap';
 import { addProductToCart } from '../../actions/productsActions';
 import './ProductList.scss';
 
-class  ProductList extends Component {
+export class  ProductList extends Component {
 	addToCart = (id) => {
 		this.props.addToCart(id);
 	}
@@ -26,7 +26,7 @@ class  ProductList extends Component {
 							<h5 className="card-header text-center">
 								<strong>{product.productname}</strong>
 							</h5>
-							<Link to={`/view/${product.id}`}>
+							<Link to='/'>
 								<div className="img-holder">
 									<CardImg className="cart-image" src={product.image} alt="" />
 									<div className="img-overlay">
@@ -64,7 +64,7 @@ class  ProductList extends Component {
 		addToCart: productId => dispatch(addProductToCart(productId))
 	});
 	
-	
+	// export { ProductList as ProductListPage}
 	export default connect(
 		mapStateToProps,
 		mapDispatchToProps

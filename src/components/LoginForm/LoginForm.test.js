@@ -1,8 +1,17 @@
 import React from 'react';
+import sinon from 'sinon';
 import { shallow, mount } from 'enzyme';
-import { BrowserRouter as Router } from 'react-router-dom';
-import LoginForm, { LoginForm as LoginFormUnit} from '.';
+import { MemoryRouter } from 'react-router-dom';
+import LoginForm, { Login } from '.';
+import { loginProps } from '../../mockData';
 
+const props = {
+  auth: {
+    isAuthenticated: true,
+  },
+  handleSubmit: jest.fn(),
+  login: jest.fn(),
+}
 
 describe('<LoginForm />', () => {
   test('should render login form', () => {
@@ -10,20 +19,26 @@ describe('<LoginForm />', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  test('should simulate on submit event', () => {
-    const wrapper = shallow(<LoginForm />);
-    wrapper.instance().handleSubmit({
-      preventDefault: jest.fn()
-    });
-    expect(wrapper).toBeDefined();
-  });
-
+  // test('should simulate on submit event', () => {
+  //   const wrapper = shallow(<LoginForm />);
+  //   wrapper.instance().handleSubmit();
+  //   expect(wrapper).toBeDefined();
+  // });
+  it('calls handleSubmit()', () => {
+    const wrapper = shallow(<Login {...loginProps}/>);
+    const event = Object.assign(jest.fn(), { preventDefault: () => {} });
+    sinon.spy(wrapper.instance(), 'handleSubmit');
+    wrapper.instance().handleSubmit(event);
+    expect(wrapper.instance().handleSubmit.calledOnce)
+      .toEqual(true);
+    expect(wrapper.instance().handleSubmit.calledWith(event));
+});
   test('should simulate handleChange event', () => {
     const newValue = 'SM0002';
     const wrapper = mount(
-      <Router>
-        <LoginForm />
-      </Router>);
+      <MemoryRouter>
+        <Login />
+      </MemoryRouter>);
     wrapper.find('input[type="text"]').simulate('change', {
       target: { name: newValue }
     });
@@ -33,22 +48,28 @@ describe('<LoginForm />', () => {
   });
 
   test('should redirect if user is authenticated', () => {
-    props.auth.isAuthenticated = true;
-    const wrapper = shallow(<LoginFormUnit />);
-    expect(wrapper.is(Redirect)).toEqual(true);
+    const wrapper = shallow(<Login {...props} />);
+    
+    expect(wrapper.find("Redirect").length).toEqual(1);
   });
 
   test('should login the user after providing logon information', () => {
-    const wrapper = mount(<LoginFormUnit />);
-
-    const staffId = wrapper.find('input[name="staffId"]');
-    const password = wrapper.find('input[name="password"]');
-    const loginForm = wrapper.find('button[type="submit"]');
-
-    staffId.simulate('change', { taget: { value: 'SM001' } });
-    password.simulate('change', { taget: { value: 'blahbalh' } });
-    loginForm.simulate('submit');
-
-    expect(props.handleSubmit).toHaveBeenCalled();
+    const event = {
+      target: {
+        name: "hgfhdghj",
+        value: "ghsgfhj"
+      },
+      preventDefault: jest.fn()
+    }
+    const wrapper = mount(
+    <MemoryRouter>
+    <Login {...props}/>
+    </MemoryRouter>);
+    const spy = sinon.spy(wrapper.find('LoginForm').instance(),'handleSubmit');
+    const spyWrapper = wrapper.find('LoginForm').instance().handleSubmit;
+    wrapper.find('LoginForm').instance().handleSubmit(event)
+    expect(spyWrapper.calledOnce)
+      .toEqual(true);
+    expect(spyWrapper.calledWith(event));
   });
 });

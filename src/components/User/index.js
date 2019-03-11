@@ -5,7 +5,7 @@ import { ToastContainer } from 'react-toastify';
 import { connect } from 'react-redux';
 import { createUser } from '../../actions/userAction'
 
-class User extends Component {
+export class User extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -169,3 +169,5 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(User);
+
+// export { User as Com}

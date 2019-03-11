@@ -1,129 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`User component should rendered user component without crashing 1`] = `
-<Fragment>
-  <h5
-    className="ml-3 text-primary"
-  >
-    Create User
-  </h5>
-  <hr
-    className="mr-5"
+<ContextProvider
+  value={
+    Object {
+      "store": Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "storeState": Object {
+        "newUser": Object {
+          "createStatus": false,
+          "creatingUser": true,
+        },
+      },
+    }
+  }
+>
+  <Connect(User)
+    newUser={
+      Object {
+        "createStatus": false,
+        "creatingUser": true,
+      }
+    }
   />
-  <div
-    className="col-md-6 formWrapper"
-  >
-    <div
-      className="formWrapper"
-    >
-      <form
-        onSubmit={[Function]}
-      >
-        <InputForm
-          className="col-md-6"
-          error=""
-          id="title"
-          label="title"
-          name="title"
-          onChange={[Function]}
-          placeholder="Enter staff title (Miss,Mrs,Mr.)"
-          text="Title"
-          type="text"
-          value=""
-        />
-        <InputForm
-          error=""
-          id="fName"
-          label="fName"
-          name="fName"
-          onChange={[Function]}
-          placeholder="Enter staff fullname (surname first)"
-          text="Fullname"
-          type="text"
-          value=""
-        />
-        <InputForm
-          error=""
-          id="phoneNumber"
-          label="phoneNumber"
-          name="phoneNumber"
-          onChange={[Function]}
-          placeholder="Enter phone Number"
-          text="Phone Number"
-          type="number"
-          value=""
-        />
-        <InputForm
-          error=""
-          id="email"
-          label="email"
-          name="email"
-          onChange={[Function]}
-          placeholder="Enter staff emailAddress"
-          text="Email Address"
-          type="email"
-          value=""
-        />
-        <InputForm
-          error=""
-          id="StaffId"
-          label="StaffId"
-          name="staffId"
-          onChange={[Function]}
-          placeholder="Enter staff Id"
-          text="StaffId"
-          type="text"
-          value=""
-        />
-        <InputForm
-          error=""
-          id="password"
-          label="password"
-          name="password"
-          onChange={[Function]}
-          placeholder="Enter password"
-          text="Password"
-          type="password"
-        />
-        <div
-          className="form-group"
-        >
-          <label
-            className="text-sm-left"
-            htmlFor="category"
-          >
-            Type of User
-          </label>
-          <select
-            className="form-control"
-            name="category"
-          >
-            <option
-              disabled={true}
-              value=""
-            >
-              Make a choice
-            </option>
-            <option
-              value="1"
-            >
-              Admin
-            </option>
-            <option
-              selected={true}
-              value="2"
-            >
-              Sale Attendant
-            </option>
-          </select>
-        </div>
-        <button
-          className="btn btn-outline-primary float-right"
-        >
-          Add User
-        </button>
-      </form>
-    </div>
-  </div>
-</Fragment>
+</ContextProvider>
 `;

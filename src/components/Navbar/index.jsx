@@ -8,7 +8,7 @@ import './navbar.scss';
 class Navigation extends Component {
   logout = () => {
     setToken('');
-    window.location.replace("http://localhost:5050/")
+    window.location.replace("http://localhost:5000/")
   }
 
   renderAdminMenu() {
@@ -96,7 +96,7 @@ const mapStateToProps = state => ({
   auth: state.authReducer
 });
 
-
+export { Navigation as NavigationPage }
 export default connect(
   mapStateToProps,
 )(Navigation);

@@ -8,11 +8,4 @@ describe('<Products />', () => {
     const wrapper = shallow(<Products />);
     expect(wrapper).toMatchSnapshot();
   });
-
-  test('should simulate onChange event', () => {
-    const wrapper = shallow(<Router><Products /></Router>);
-    handleChange = jest.fn();
-    wrapper.instance().handleChange();
-    expect(wrapper).toBeDefined();
-  });
 });

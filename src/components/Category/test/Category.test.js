@@ -15,8 +15,15 @@ describe('Category component', () => {
   });
 
   test.only('should simulate onChange event', () => {
+    console.log("======================")
+    const event = {
+      target: {
+        name: "productname",
+        valeu: "Shoe"
+      }
+    }
     const wrapper = mount(<Category />);
-    wrapper.instance().handleChange();
+    wrapper.instance().handleChange(event);
     expect(wrapper).toBeDefined();
   });
 });

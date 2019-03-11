@@ -3,12 +3,12 @@ import InputForm from '../../components/InputForms';
 import { createProduct } from '../../actions/productsActions';
 import { CreateProductValidator } from '../../helpers/validate';
 import { ToastContainer } from 'react-toastify';
-
+import {imageUpload} from '../../helpers/axiosHelper/products';
 import { connect } from 'react-redux';
 import './Product.scss';
 
 
-class Product extends Component {
+export class Product extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -17,7 +17,7 @@ class Product extends Component {
         category: '',
         description:'',
         price:'',
-        image: '',
+        productImage: '',
         quantity:'',
         minimumallowed:''
       },
@@ -25,6 +25,19 @@ class Product extends Component {
       errors: {}
     };
   }
+
+  handleImageUpload = async (event) => {
+    const { product } = this.state;
+    const file = event.target.files[0];
+    const response = await imageUpload(file);
+    console.log(response);
+    product.productImage = response.data.secure_url.toString();
+    
+    this.setState({
+      product
+    });
+    console.log('--------->', product)
+  };
 
   handleChange = event => {
     const { product } = this.state;
@@ -97,8 +110,8 @@ class Product extends Component {
             <InputForm text="Minimun Sales Allowed" error={errors.minimumallowed} label="minimumallowed" type="text" name="minimumallowed" id="minimumallowed" value={product.minimumallowed} placeholder="Enter minimum sales allowed" onChange={this.handleChange} />
             <div className="form-group">
               <label htmlFor="image text-sm-left">Image</label>
-              <input type="file" className="form-control-file" id="image" />
-              <small id="productHelp" className="form-text text-muted">Upload product image</small>
+              <input type="file" className="form-control-file" id="productImage" onChange={this.handleImageUpload} />
+              <small id="productHelp" className="form-text text-muted">Product Image is required</small>
               <span className="text-danger">{errors.image}</span>
             </div>
             <button className="btn btn-outline-primary float-right">Add product</button>
@@ -116,5 +129,5 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   create: productDetails => dispatch(createProduct(productDetails))
 });
-
+export { Product as ProductPage }
 export default connect(mapStateToProps, mapDispatchToProps)(Product);

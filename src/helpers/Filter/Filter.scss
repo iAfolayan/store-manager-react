@@ -10,3 +10,48 @@
 .filter input {
   float: right;
 }
+
+#cartHolder {
+	>img {
+		float: right;
+		cursor: pointer;
+	}
+}
+.circle {
+      background: #0f4889;
+      border-radius: 50%;
+      color: #fff;
+      text-align: center;
+      font-size: 10px;
+      float: right;
+      margin-right: 12px;
+      line-height: 20px;
+      box-shadow: #000 0px 0px 2px 0px;
+      position: relative;
+}
+.checkoutHolder {
+	width: 100%;
+	background-color: green;
+	padding: 10px;
+	height: 300px;
+	.thumbnail {
+		>img {
+			width: 10%;
+			border-radius: 20px;
+			float: left;
+		}
+	}
+}
+.thumbnail {
+	>img {
+		width: 100%;
+		border-right: #171919 3px solid;
+	}
+}
+.checkoutHold {
+	.article {
+		margin-left: 10px;
+		float: left;
+		text-align: justify;
+	}
+}

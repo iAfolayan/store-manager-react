@@ -13,7 +13,7 @@ exports[`<Product page /> should rendered product page without crashed 1`] = `
     <div
       className="col-sm-12 col-md-10"
     >
-      <Product />
+      <Connect(Product) />
       <Footer
         footerClassName="footer inner"
       />

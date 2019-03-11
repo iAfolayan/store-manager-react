@@ -7,16 +7,5 @@ describe('Filter Component', () => {
     const wrapper = shallow(<Filter />);
     expect(wrapper).toMatchSnapshot();
   })
-
-  test('should test onchange event', () => {
-    const wrapper = shallow(<Filter />);
-    wrapper.instance().handleChange();
-    expect(wrapper).toBeDefined();
-  })
-
- test('should simulate filter', () => {
-    const wrapper = shallow(<Filter />);
-    wrapper.instance().filterproduct();
-    expect(wrapper).toBeDefined();
-  });
 });
+

@@ -58,39 +58,30 @@ describe('Validate create user', () => {
     const user = {
       title: '',
       staffId: 'SM0003',
-      phoneNumber: '09832156788',
+      phonenumber: '09832156788',
       fullname: 'oluchi Amaka'
     }
     const checkUser = CreateUserValidator(user);
     expect(checkUser.title).toEqual('This field is required');
   });
-  test('should check if title contains a number', () => {
-    const user = {
-      title: 't8tyf',
-      staffId: 'SM0003',
-      phoneNumber: '09832156788',
-      fullname: 'oluchi Amaka'
-    }
-    const checkUser = CreateUserValidator(user);
-    expect(checkUser.title).toEqual('Oops!!! can ONLY be alphabet');
-  });
+
 
   test('should check for valid staffId', () => {
     const user = {
       title: 'ttyf',
-      staffId: 'SM0003',
-      phoneNumber: '09832156788',
+      staffId: 'SR0003',
+      phonenumber: '09832156788',
       fullname: 'oluchi Amaka'
     }
     const checkUser = CreateUserValidator(user);
-    expect(checkUser.staffId).toEqual('This field is required');
+    expect(checkUser.staffId).toEqual('Oops!!! Invalid StaffId must contain "SM"');
   });
 
   test('should check if staffId contains the prefix "SM"', () => {
     const user = {
       title: 'ttyf',
-      staffId: 'SM0003',
-      phoneNumber: '09832156788',
+      staffId: '0003',
+      phonenumber: '09832156788',
       fullname: 'oluchi Amaka'
     }
     const checkUser = CreateUserValidator(user);
@@ -100,45 +91,34 @@ describe('Validate create user', () => {
   test('should check if phone number is empty', () => {
     const user = {
       title: 'ttyf',
-      staffId: 'SM0003',
-      phoneNumber: '',
+      staffId: 'SM001',
+      phonenumber: '',
       fullname: 'oluchi Amaka'
     }
     const checkUser = CreateUserValidator(user);
-    expect(checkUser.staffId).toEqual('This field is required');
+    expect(checkUser.phonenumber).toEqual('This field is required');
   });
 
   test('should check if entry is not a valid phone number', () => {
     const user = {
       title: 'ttyf',
       staffId: 'SM0003',
-      phoneNumber: '9806d6767sf',
+      phonenumber: '9806d6767sf',
       fullname: 'oluchi Amaka'
     }
     const checkUser = CreateUserValidator(user);
-    expect(checkUser.staffId).toEqual('Oops!!! Invalid input');
+    expect(checkUser.phonenumber).toEqual('Oops!!! Invalid input');
   });
 
   test('should check if fullname is empty', () => {
     const user = {
       title: 'ttyf',
       staffId: 'SM0003',
-      phoneNumber: '',
-      fullname: 'oluchi Amaka'
+      phonenumber: '08097654322',
+      fullname: ''
     }
     const checkUser = CreateUserValidator(user);
-    expect(checkUser.staffId).toEqual('This field is required');
-  });
-
-  test('should check if fullname is empty', () => {
-    const user = {
-      title: 'ttyf',
-      staffId: 'SM0003',
-      phoneNumber: '9806d6767sf',
-      fullname: 'oluchi Amaka'
-    }
-    const checkUser = CreateUserValidator(user);
-    expect(checkUser.staffId).toEqual('Oops!!! can ONLY be alphabet');
+    expect(checkUser.fullname).toEqual('This field is required');
   });
 
 });
