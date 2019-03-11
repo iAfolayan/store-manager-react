@@ -12,7 +12,6 @@
     "dev": "webpack-dev-server --config webpack/webpack.dev.js --open --hot",
     "test": "NODE_ENV=test jest --coverage",
     "lint": "./node_modules/eslint/bin/eslint.js . --ext .js,.jsx",
-    "heroku-postbuild": "npm run build",
     "coverage": "npm run test -- --coverage --verbose",
     "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls"
   },
