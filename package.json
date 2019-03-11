@@ -86,11 +86,14 @@
     "webpack-dev-server": "^3.2.1"
   },
   "scripts": {
-    "test": "NODE_ENV=test jest --coverage",
-    "start": "webpack-dev-server --mode development --open",
+    "build": "webpack --config webpack/webpack.prod.js",
+    "start": "node ./server.js",
     "dev": "webpack-dev-server --config webpack/webpack.dev.js --open --hot",
-    "build": "webpack --mode production",
-    "heroku-postbuild": "npm run build"
+    "test": "NODE_ENV=test jest --coverage",
+    "lint": "./node_modules/eslint/bin/eslint.js . --ext .js,.jsx",
+    "heroku-postbuild": "npm run build",
+    "coverage": "npm run test -- --coverage --verbose",
+    "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls"
   },
   "jest": {
     "setupFilesAfterEnv": [
