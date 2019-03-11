@@ -32,7 +32,7 @@ module.exports = {
        ]
      },
      {
-       test: /\.(png|PNG|woff|woff2|eot|ttf|svg)$/,
+       test: /\.(PNG|png|woff|woff2|eot|ttf|svg)$/,
        loader: 'url-loader'
      },
      {
@@ -45,7 +45,7 @@ module.exports = {
        ]
      },
      {
-       test: /\.(png|jpg|PNG)$/,
+       test: /\.(png|PNG|jpg)$/,
        include: path.join(__dirname, 'static/images'),
        loader: 'file-loader'
      },
@@ -72,7 +72,7 @@ module.exports = {
  },
  plugins: [
    new HtmlWebpackPlugin({
-     title: 'Store Manager',
+     title: 'Store Manger',
      template: './index.html'
    }),
    new MiniCssExtractPlugin({
