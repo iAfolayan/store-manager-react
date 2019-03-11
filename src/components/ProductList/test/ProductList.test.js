@@ -21,7 +21,7 @@ const props = {
 }
 describe('<ProductListPage />', () => {
   test('should test product info', () => {
-    const wrapper = mount(<MemoryRouter>
+    const wrapper = mount(<MemoryRouter keyLength={0}>
       <ProductList {...props} />
     </MemoryRouter>);
     expect(wrapper).toMatchSnapshot();

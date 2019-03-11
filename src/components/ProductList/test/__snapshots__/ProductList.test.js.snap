@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<ProductListPage /> should test product info 1`] = `
-<MemoryRouter>
+<MemoryRouter
+  keyLength={0}
+>
   <Router
     history={
       Object {
@@ -12,7 +14,6 @@ exports[`<ProductListPage /> should test product info 1`] = `
         "entries": Array [
           Object {
             "hash": "",
-            "key": "0qb4zk",
             "pathname": "/",
             "search": "",
             "state": undefined,
@@ -26,7 +27,6 @@ exports[`<ProductListPage /> should test product info 1`] = `
         "listen": [Function],
         "location": Object {
           "hash": "",
-          "key": "0qb4zk",
           "pathname": "/",
           "search": "",
           "state": undefined,
