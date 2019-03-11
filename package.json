@@ -9,6 +9,7 @@
   "scripts": {
     "start": "node ./server.js",
     "dev": "webpack-dev-server --config webpack/webpack.dev.js --open --hot",
+    "build": "webpack --config ./webpack/webpack.prod.js",
     "test": "NODE_ENV=test jest --coverage",
     "lint": "./node_modules/eslint/bin/eslint.js . --ext .js,.jsx",
     "coverage": "npm run test -- --coverage --verbose",
