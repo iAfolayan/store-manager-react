@@ -1,4 +1,4 @@
-@import "https://fonts.googleapis.com/css?family=Lato|Montserrat|Roboto";
+@import url("https://fonts.googleapis.com/css?family=Lato|Montserrat|Roboto");
 
 $font-family: Roboto, Lato, Montserrat;
 $primarycolor: #0f488a;
@@ -58,6 +58,9 @@ ul {
 .tableContainer {
 	width: 100%;
 	overflow: auto;
+}
+.hide {
+	display: none;
 }
 a {
 	text-decoration: none;
@@ -472,6 +475,20 @@ caption {
 		padding-top: 15px;
 	}
 }
+
+ul.cartItemsList {
+	color: #fff;
+	font-size: 1.3rem;
+	text-transform: capitalize;
+
+	button {
+		float: right;
+	}
+
+	span {
+		display: inline;
+	}
+}
 .summaryHolder {
 	float: left;
 	width: 100%;
@@ -752,13 +769,14 @@ caption {
 }
 .cart {
 	position: absolute;
-	top: 110px;
-	right: 0;
-	transition: all 0.3s ease-in-out;
-	width: 0;
-	overflow: hidden;
-	background: var(--primaryColor);
-	z-index: 9;
+    top: 70px;
+    right: 2rem;
+    transition: all 0.3s ease-in-out;
+    width: 30%;
+    overflow: hidden;
+    background: #0f488a;
+    z-index: 9;
+    padding: 20px;
 }
 .cart-info {
 	color: $white;
@@ -766,7 +784,7 @@ caption {
 	padding: 0.4rem 0.6rem;
 	cursor: pointer;
 	min-height: 10rem;
-	background: var(--primaryColor);
+	background: $primarycolor;
 	&:hover {
 		border-color: $primarycolor;
 		color: $white;
@@ -803,7 +821,7 @@ caption {
 }
 .item-text {
 	float: left;
-	width: 60%;
+	width: 80%;
 	padding-left: 20px;
 	color: $white;
 	font-size: 13px;
@@ -831,7 +849,8 @@ caption {
 .cartHeading {
 	display: block;
 	text-align: center;
-	color: $white;
+	color: #fff;
+	text-transform: uppercase;
 }
 .item-remove {
 	width: 8%;
@@ -930,7 +949,6 @@ caption {
 		>img {
 			width: 4%;
 			position: relative;
-			right: -12px;
 		}
 	}
 	.mobileMenu {

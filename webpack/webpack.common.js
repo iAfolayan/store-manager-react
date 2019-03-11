@@ -1,3 +1,4 @@
+
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -32,30 +33,17 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+        test: /\.(jpg|png|PNG|woff|woff2|eot|ttf|svg)$/,
         loader: 'url-loader'
       },
       {
-        test: /\.(css|scss|less)$/,
+        test: /\.(css|scss)$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader']
       },
       {
-        test: /\.(png|jpg)$/,
+        test: /.*\.(gif|png|PNG|jpg|svg)$/i,
         include: path.join(__dirname, 'static/images'),
         loader: 'file-loader'
-      },
-      {
-        test: /\.(gif|png|jpe?g|svg)$/i,
-        use: [
-          'file-loader',
-          {
-            loader: 'image-webpack-loader',
-            options: {
-              bypassOnDebug: true,
-              disable: true
-            }
-          }
-        ]
       }
     ]
   },
@@ -67,7 +55,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Authors Haven',
+      title: 'Store Manager',
       template: './index.html'
     }),
     new MiniCssExtractPlugin({

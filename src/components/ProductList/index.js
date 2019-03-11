@@ -2,15 +2,16 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Card, CardImg } from 'reactstrap';
+import { addProductToCart } from '../../actions/productsActions';
 import './ProductList.scss';
 
-class  ProductList extends Component {
+export class  ProductList extends Component {
 	addToCart = (id) => {
-		console.log('id---->', id)
+		this.props.addToCart(id);
 	}
 
 	addToCartButton = (prd) => {
-		return <button type="button" onClick={() => this.addToCart({prd})} className="addToCart">Add to Cart</button>
+		return <button type="button" onClick={() => this.addToCart(prd)} className="addToCart">Add to Cart</button>
 	}
 	renderProducts() {
 		const { response } = this.props.auth;
@@ -23,9 +24,9 @@ class  ProductList extends Component {
 					<input type="hidden" name="productId" value={product.id} />
 						<Card className="card">
 							<h5 className="card-header text-center">
-								<strong>{product.name}</strong>
+								<strong>{product.productname}</strong>
 							</h5>
-							<Link to="/view/"{...product.id }>
+							<Link to='/'>
 								<div className="img-holder">
 									<CardImg className="cart-image" src={product.image} alt="" />
 									<div className="img-overlay">
@@ -58,8 +59,13 @@ class  ProductList extends Component {
 	const mapStateToProps = state => ({
 		auth: state.authReducer
 	});
+
+	const mapDispatchToProps = dispatch => ({
+		addToCart: productId => dispatch(addProductToCart(productId))
+	});
 	
-	
+	// export { ProductList as ProductListPage}
 	export default connect(
 		mapStateToProps,
+		mapDispatchToProps
 	)(ProductList);

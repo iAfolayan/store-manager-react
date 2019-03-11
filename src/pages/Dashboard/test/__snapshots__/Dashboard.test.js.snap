@@ -13,8 +13,14 @@ exports[`Dashboard should rendered Dashboard without crashed 1`] = `
     <div
       className="col-md-10"
     >
-      <Filter />
-      <Connect(Products) />
+      <Connect(Filter)
+        handleChange={[Function]}
+        value=""
+      />
+      <Connect(cart) />
+      <Connect(Products)
+        filterQuery=""
+      />
       <Footer
         footerClassName="footer inner"
       />

@@ -13,7 +13,7 @@ exports[`User page should rendered User page without crashed 1`] = `
     <div
       className="col-sm-12 col-md-10"
     >
-      <User />
+      <Connect(User) />
       <Footer
         footerClassName="footer inner"
       />

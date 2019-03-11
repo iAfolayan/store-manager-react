@@ -32,13 +32,7 @@ class LoginForm extends Component {
       this.setState({ errors });
     }
     const { login } = this.props;
-    login(user);
-
-    // if (this.props.auth.isAuthenticated) {
-      
-    // }
-    // const userInfo = getUserDetailsFromLocalStorage();
-    // console.log('----->', userInfo)
+    login(user)
   }
 
   handleChange(event) {

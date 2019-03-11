@@ -1,7 +1,134 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ProductList /> should test product info 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+exports[`<ProductListPage /> should test product info 1`] = `
+<MemoryRouter
+  keyLength={0}
+>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <ProductList
+      addToCart={[MockFunction]}
+      auth={
+        Object {
+          "response": Object {
+            "role": 1,
+          },
+        }
+      }
+      products={
+        Array [
+          Object {
+            "description": "",
+            "id": 1,
+            "image": "",
+            "minimumallowed": "",
+            "price": "",
+            "productname": "",
+          },
+        ]
+      }
+    >
+      <div>
+        <div
+          className="col-md-3 float-left"
+          key="1"
+        >
+          <input
+            name="productId"
+            type="hidden"
+            value={1}
+          />
+          <Card
+            className="card"
+            tag="div"
+          >
+            <div
+              className="card card"
+            >
+              <h5
+                className="card-header text-center"
+              >
+                <strong />
+              </h5>
+              <Link
+                replace={false}
+                to="/"
+              >
+                <a
+                  href="/"
+                  onClick={[Function]}
+                >
+                  <div
+                    className="img-holder"
+                  >
+                    <CardImg
+                      alt=""
+                      className="cart-image"
+                      src=""
+                      tag="img"
+                    >
+                      <img
+                        alt=""
+                        className="cart-image card-img"
+                        src=""
+                      />
+                    </CardImg>
+                    <div
+                      className="img-overlay"
+                    >
+                      <article />
+                    </div>
+                    <h3
+                      data-price=""
+                    >
+                      ₦
+                       / piece
+                    </h3>
+                  </div>
+                </a>
+              </Link>
+              <div
+                className="dets"
+              >
+                <small>
+                  Minimum Qty 
+                </small>
+              </div>
+            </div>
+          </Card>
+        </div>
+      </div>
+    </ProductList>
+  </Router>
+</MemoryRouter>
 `;

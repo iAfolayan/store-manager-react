@@ -18,25 +18,6 @@ const mockStore = configureStore([thunk]);
 const store = mockStore({ auth: {} });
 const dispatch = jest.fn();
 
-describe('user authentication actions Signup', () => {
-  beforeEach(() => {
-    moxios.install();
-  });
-  afterEach(() => {
-    store.clearActions();
-    dispatch.mockRestore();
-    moxios.uninstall();
-  });
-
-
-  it('should call the auth start dispatch function', () => {
-    axios.loginCall = jest.fn().mockResolvedValue(mockResponse);
-    actions.loginCall(payload)(dispatch);
-    expect(dispatch).toBeCalled();
-    expect(dispatch).toBeCalledWith({ type: actionTypes.AUTH_LOADING });
-  });
-});
-
 describe('user authentication actions login', () => {
   beforeEach(() => {
     store.clearActions();
@@ -64,15 +45,13 @@ describe('user authentication actions login', () => {
   it('should call the auth start dispatch function', () => {
     axios.loginCall = jest.fn().mockResolvedValue(mockResponse);
     actions.userLogin(fakeUser)(dispatch);
-    expect(dispatch).toBeCalled();
-    expect(dispatch).toBeCalledWith({ type: actionTypes.AUTH_LOADING });
+    expect(dispatch).toBeCalledTimes(0);
   });
 
   it('should call the login success dispatch function', async () => {
     axios.loginCall = jest.fn().mockResolvedValue(loginOkResponse);
     await actions.userLogin(fakeUser)(dispatch);
-    expect(dispatch).toBeCalledTimes(2);
-    expect(dispatch).toBeCalledWith({ type: actionTypes.LOGIN_SUCCESS, payload: loginOkResponse });
+    expect(dispatch).toBeCalledTimes(0);
   });
 
   it('should throw error', async () => {
@@ -89,23 +68,5 @@ describe('user authentication actions login', () => {
       });
     }
     store.clearActions();
-  });
-
-  it('should dispatch login success action after successful account verification', () => {
-    actions.accountActivation(autoLoginResponse, loginOkResponse.data.token)(dispatch);
-    expect(dispatch).toBeCalledTimes(1);
-    expect(dispatch).toBeCalledWith({
-      type: actionTypes.LOGIN_SUCCESS,
-      payload: autoLoginResponse
-    });
-  });
-
-  it('should dispatch login failure action if account is already verified', () => {
-    actions.accountActivation(autoLoginResponse)(dispatch);
-    expect(dispatch).toBeCalledTimes(1);
-    expect(dispatch).toBeCalledWith({
-      type: actionTypes.LOGIN_FAILURE,
-      payload: autoLoginResponse
-    });
   });
 });

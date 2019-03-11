@@ -1,17 +1,22 @@
 import React, { Component, Fragment } from 'react';
 import InputForm from '../../components/InputForms';
 import { CreateUserValidator } from '../../helpers/validate';
+import { ToastContainer } from 'react-toastify';
+import { connect } from 'react-redux';
+import { createUser } from '../../actions/userAction'
 
-class User extends Component {
+export class User extends Component {
   constructor(props) {
     super(props);
     this.state = {
       user: {
         staffId: '',
         title: '',
-        phoneNumber:'',
-        emailAddress:'',
+        phonenumber:'',
+        emailaddress:'',
+        password: '',
         fullname:'',
+        role: ''
       },
       isLoading: false,
       errors: {}
@@ -31,16 +36,39 @@ class User extends Component {
     event.preventDefault();
     const { user } = this.state;
     const errors = CreateUserValidator(user);
-    if (errors) {
+    if (Object.keys(errors).length) {
       this.setState({ errors });
+    } else {
+      this.setState({ isLoading: true });
+      this.props.create(user)
     }
-    // const { login } = this.props;
-    // login(product);
   }
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const { isLoading } = prevState;
+    const { newUser: { creatingUser, createStatus } } = nextProps;
+    if (isLoading && !creatingUser && createStatus) {
+      return { ...prevState, isLoading: false, user: {
+        staffId: '',
+        title: '',
+        phonenumber:'',
+        emailaddress:'',
+        password: '',
+        fullname:'',
+        role: ''
+      }}
+    } else {
+      return prevState;
+    }
+  }
+  
+
+  
   render() {
     const { user, errors, isLoading } = this.state;
     return (
       <Fragment>
+        <ToastContainer autoClose={5000} />
         <h5 className="ml-3 text-primary">Create User</h5>
         <hr className="mr-5" />
         <div className="col-md-6 formWrapper">
@@ -63,20 +91,20 @@ class User extends Component {
                   text="Fullname"
                   label="fName"
                   type="text"
-                  name="fName"
+                  name="fullname"
                   id="fName"
                   value={user.fullname}
                   placeholder="Enter staff fullname (surname first)"
                   onChange={this.handleChange}
                 />
                 <InputForm
-                error={errors.phoneNumber}
+                error={errors.phonenumber}
                   text="Phone Number"
                   label="phoneNumber"
                   type="number"
-                  name="phoneNumber"
+                  name="phonenumber"
                   id="phoneNumber"
-                  value={user.phoneNumber}
+                  value={user.phonenumber}
                   placeholder="Enter phone Number"
                   onChange={this.handleChange}
                 />
@@ -85,9 +113,9 @@ class User extends Component {
                   text="Email Address"
                   label="email"
                   type="email"
-                  name="email"
+                  name="emailaddress"
                   id="email"
-                  value={user.emailAddress}
+                  value={user.emailaddress}
                   placeholder="Enter staff emailAddress"
                   onChange={this.handleChange}
                 />
@@ -102,6 +130,7 @@ class User extends Component {
                   placeholder="Enter staff Id"
                   onChange={this.handleChange}
                 />
+                <small id="descHelp" className="form-text text-muted">Valid StaffId begins with <code>SM</code></small>
                 <InputForm
                 error={errors.password}
                   text="Password"
@@ -113,12 +142,13 @@ class User extends Component {
                   placeholder="Enter password"
                   onChange={this.handleChange}
                 />
+                <small id="password" className="form-text text-muted">Must contain at least an Uppercase, a number and minimum of 8</small>
                 <div className='form-group'>
                   <label htmlFor="category" className="text-sm-left">Type of User</label>
-                  <select className="form-control" name="category" onChange={this.handleSelect}>
-                    <option value="" disabled>Make a choice</option>
+                  <select className="form-control" name="role" onChange={this.handleChange} value={user.role}>
+                    <option value="">Make a choice</option>
                     <option value="1">Admin</option>
-                    <option value="2" selected>Sale Attendant</option>
+                    <option value="2">Sale Attendant</option>
                   </select>
                 </div>
                 <button className="btn btn-outline-primary float-right">{isLoading ? 'Loading...' : 'Add User'}</button>
@@ -130,4 +160,14 @@ class User extends Component {
   }
 }
 
-export default User;
+const mapStateToProps = state => ({
+  newUser: state.userReducer
+});
+
+const mapDispatchToProps = dispatch => ({
+  create: userDetails => dispatch(createUser(userDetails))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(User);
+
+// export { User as Com}
