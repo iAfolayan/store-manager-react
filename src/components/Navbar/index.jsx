@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { setToken } from '../../helpers/jwt';
 import { connect } from 'react-redux';
+import { BASE_URL } from '../../constants'
 import './navbar.scss';
 
 
 class Navigation extends Component {
   logout = () => {
     setToken('');
-    window.location.replace("http://localhost:5000/")
+    window.location.replace(`${ BASE_URL }`)
   }
 
   renderAdminMenu() {
