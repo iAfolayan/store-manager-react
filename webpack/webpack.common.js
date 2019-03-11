@@ -32,7 +32,7 @@ module.exports = {
        ]
      },
      {
-       test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+       test: /\.(png|PNG|woff|woff2|eot|ttf|svg)$/,
        loader: 'url-loader'
      },
      {
@@ -45,12 +45,12 @@ module.exports = {
        ]
      },
      {
-       test: /\.(png|jpg)$/,
+       test: /\.(png|jpg|PNG)$/,
        include: path.join(__dirname, 'static/images'),
        loader: 'file-loader'
      },
      {
-       test: /\.(gif|png|jpe?g|svg)$/i,
+       test: /\.(gif|png|PNG|jpe?g|svg)$/i,
        use: [
          'file-loader',
          {
