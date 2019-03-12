@@ -30,13 +30,11 @@ export class Product extends Component {
     const { product } = this.state;
     const file = event.target.files[0];
     const response = await imageUpload(file);
-    console.log(response);
     product.productImage = response.data.secure_url.toString();
     
     this.setState({
       product
     });
-    console.log('--------->', product)
   };
 
   handleChange = event => {
@@ -58,7 +56,7 @@ export class Product extends Component {
       this.setState({ isLoading: true });
       this.props.create(product)
     }
-
+console.log('---------', product);
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -70,7 +68,7 @@ export class Product extends Component {
         category: '',
         description:'',
         price:'',
-        image: '',
+        productImage: '',
         quantity:'',
         minimumallowed:''
       }};

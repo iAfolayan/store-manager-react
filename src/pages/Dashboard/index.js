@@ -6,7 +6,7 @@ import './Dashboard.scss';
 import Products from '../../components/Products';
 import Cart from '../../components/Products/cart';
 
-class Dashboard extends Component {
+export class Dashboard extends Component {
   state = {
     filterQuery: ''
   };

@@ -3,17 +3,6 @@ import { connect } from 'react-redux';
 import { removeFromCart } from '../../actions/productsActions';
 
 export class cart extends Component {
-	// calculateTotal() {
-	// 	const total = cartItems.reduce(
-	// 		(curr, next) => {
-	// 			curr.quantity += next.quantity;
-	// 			curr.amount += next.price * next.quantity;
-	// 			return curr;
-	// 		},
-	// 		{ amount: 0, quantity: 0 }
-	// 	);
-	// }
-
 	remove(cartIndex) {
 		this.props.remove(cartIndex);
 	}

@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Cart /> should test cart info 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "store": Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "storeState": Object {
+        "cart": Array [
+          Object {
+            "description": "This is lovely and interesting",
+            "id": 1,
+            "image": "mobile.png",
+            "minimumallowed": 40,
+            "price": 340,
+            "productname": "Mobile",
+          },
+        ],
+      },
+    }
+  }
+>
+  <cart
+    cart={
+      Array [
+        Object {
+          "description": "This is lovely and interesting",
+          "id": 1,
+          "image": "mobile.png",
+          "minimumallowed": 40,
+          "price": 340,
+          "productname": "Mobile",
+        },
+      ]
+    }
+  />
+</ContextProvider>
+`;

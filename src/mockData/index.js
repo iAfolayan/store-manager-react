@@ -6,6 +6,16 @@ const payload = {
   password: 'password123R'
 };
 
+const prdPayload = {
+  productname: '',
+  category: '',
+  description: '',
+  price: '',
+  productImage: '',
+  quantity: '',
+  minimumallowed: ''
+}
+
 const fakeUser = {
   staffId: 'SM090',
   password: 'Password1'
@@ -39,6 +49,7 @@ const loginProps = {
 }
 export {
   payload,
+  prdPayload,
   fakeUser,
   loginEndpoint,
   loginOkResponse,

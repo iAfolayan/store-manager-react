@@ -22,11 +22,13 @@ export const CreateProductValidator = (product) => {
   if(Validator.isEmpty(product.productname)) {
     errors.productname = 'This field is required';
   }
+
   if(Validator.isEmpty(product.price)) {
     errors.price = 'This field is required';
   } else if (!Validator.isFloat(product.price)) {
     errors.price = 'Oops!!! enter a valid amount';
   }
+
   if(Validator.isEmpty(product.description)) {
     errors.description = 'This field is required';
   } else if(!Validator.isLength(product.description, { max: 255 })) {
@@ -63,7 +65,8 @@ export const CreateUserValidator = (user) => {
   }
   if (Validator.isEmpty(user.staffId)) {
     errors.staffId = 'This field is required';
-  } else if (!Validator.contains(user.staffId, 'SM')) {
+  } 
+  if (!Validator.contains(user.staffId, 'SM')) {
     errors.staffId = 'Oops!!! Invalid StaffId must contain "SM"';
   }
   if (Validator.isEmpty(user.phonenumber)) {

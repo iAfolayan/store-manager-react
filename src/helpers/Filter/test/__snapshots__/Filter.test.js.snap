@@ -1,7 +1,51 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Filter Component should render filter component without crashed 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+exports[`Filter Component should render filter component without crashing 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Filter
+    auth={
+      Object {
+        "response": 1,
+      }
+    }
+    handleChange={[MockFunction]}
+    state=""
+    value=""
+  >
+    <div
+      className="col-sm-12 filter"
+    >
+      <form
+        className="form-group"
+      >
+        <input
+          className="form-control col-md-3"
+          onChange={[MockFunction]}
+          placeholder="Filter product by name"
+          type="search"
+          value=""
+        />
+        <div
+          id="cartHolder"
+        >
+          <img
+            alt=""
+            src="./image/cart.png"
+          />
+        </div>
+      </form>
+    </div>
+  </Filter>
+</Provider>
 `;

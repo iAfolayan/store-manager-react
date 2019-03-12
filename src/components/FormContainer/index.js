@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './FormContainer.scss';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
-import Logo from './images/logo.PNG';
+import Logo from './images/logo.png';
 
 
 class FormContainer extends Component {
@@ -19,7 +19,7 @@ class FormContainer extends Component {
         <ToastContainer autoClose={5000} />
         <div className="wrapper-body d-flex">
           <div className="wrapper">
-            <img src={Logo} alt="Logo" />
+            <img src="./images/logo.png" alt="Logo" />
             <h1 className="app-name">{ title }</h1>
             <Fragment>{children}</Fragment>
           </div>
