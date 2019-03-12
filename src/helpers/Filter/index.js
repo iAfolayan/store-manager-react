@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import './Filter.scss';
 import { connect } from 'react-redux';
-import Cart from './image/cart.png';
+// import Cart from './image/cart.png';
 
-class Filter extends Component {
+export class Filter extends Component {
 	renderMenu() {
 		return (
 			<div id="cartHolder">
-				<img src={Cart} alt="" />
+				<img src='./image/cart.png' alt="" />
 			</div>
 		);
 	}
+
 	render() {
 		const { handleChange, value} = this.props;
 		const { response } = this.props.auth;

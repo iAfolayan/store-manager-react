@@ -1,4 +1,4 @@
-import {LogInValidator, ValidateCategory, CreateUserValidator } from '.';
+import {LogInValidator, ValidateCategory, CreateProductValidator, CreateUserValidator } from '.';
 
 describe('Store Manager Validation Testing', () => {
   describe('Login validator', () => {
@@ -120,6 +120,102 @@ describe('Validate create user', () => {
     const checkUser = CreateUserValidator(user);
     expect(checkUser.fullname).toEqual('This field is required');
   });
-
 });
 
+describe('Create Product Validator Test', () => {
+  test('should check if product name is empty', () => {
+    const product = {
+      productname: '',
+      price: '450',
+      description: 'This is the begining of all.',
+      minimumallowed: '20',
+      productImage: 'image.jpg'
+    }
+    const checkProduct = CreateProductValidator(product);
+    expect(checkProduct.productname).toEqual('This field is required');
+  });
+
+  test('should check if product price is empty', () => {
+    const product = {
+      productname: 'Mobile',
+      price: '',
+      description: 'This is the begining of all.',
+      minimumallowed: '20',
+      productImage: 'image.jpg'
+    }
+    const checkProduct = CreateProductValidator(product);
+    expect(checkProduct.price).toEqual('This field is required');
+  });
+
+  test('should check if product description is empty', () => {
+    const product = {
+      productname: 'Mobile',
+      price: '450',
+      description: '',
+      minimumallowed: '20',
+      productImage: 'image.jpg'
+    }
+    const checkProduct = CreateProductValidator(product);
+    expect(checkProduct.description).toEqual('This field is required');
+  });
+
+  test('should check if product description exceed length', () => {
+    const product = {
+      productname: 'Mobile',
+      price: '450',
+      description: 'This is the very best of react test. Enjoying this. Meanwhile, I need my test to be above 70%. This is the very best of react test. Enjoying this. Meanwhile, I need my test to be above 70%.This is the very best of react test. Enjoying this. Meanwhile, I need ',
+      minimumallowed: '20',
+      productImage: 'image.jpg'
+    }
+    const checkProduct = CreateProductValidator(product);
+    expect(checkProduct.description).toEqual('Oops!!! exceed description length');
+  });
+
+  test('should check if minimum allowed is empty', () => {
+    const product = {
+      productname: 'Mobile',
+      price: '450',
+      description: 'This is cool',
+      minimumallowed: '',
+      productImage: 'image.jpg'
+    }
+    const checkProduct = CreateProductValidator(product);
+    expect(checkProduct.minimumallowed).toEqual('This field is required');
+  });
+
+  test('should check if minimum allowed is not an integer', () => {
+    const product = {
+      productname: 'Mobile',
+      price: '450',
+      description: 'This is cool',
+      minimumallowed: '34b4',
+      productImage: 'image.jpg'
+    }
+    const checkProduct = CreateProductValidator(product);
+    expect(checkProduct.minimumallowed).toEqual('Oops!!! enter a valid number');
+  });
+
+  test('should check if product image is empty', () => {
+    const product = {
+      productname: 'Mobile',
+      price: '450',
+      description: 'This is cool',
+      minimumallowed: '344',
+      productImage: ''
+    }
+    const checkProduct = CreateProductValidator(product);
+    expect(checkProduct.productImage).toEqual('Product Image field is required');
+  });
+
+  test('should check if product image is empty', () => {
+    const product = {
+      productname: 'Mobile',
+      price: '450',
+      description: 'This is cool',
+      minimumallowed: '344',
+      productImage: ''
+    }
+    const checkProduct = CreateProductValidator(product);
+    expect(checkProduct.productImage).toEqual('Product Image field is required');
+  });
+});

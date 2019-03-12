@@ -10,8 +10,6 @@ import {
   loginOkResponse,
   mockResponse,
   fakeUser,
-  autoLoginResponse,
-
 } from '../../../mockData';
 
 const mockStore = configureStore([thunk]);

@@ -34,7 +34,7 @@ exports[`<FormContainer /> should rendered Form container without crashing 1`] =
     >
       <img
         alt="Logo"
-        src="test-file-stub"
+        src="./images/logo.png"
       />
       <h1
         className="app-name"
